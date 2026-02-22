@@ -1,0 +1,2379 @@
+{
+  "info": {
+    "name": "Maximo OSLC - Financial (FINANCIAL)",
+    "description": "Maximo Financial (FINANCIAL) - your Maximo instance.\n62 endpoints from OAS3 spec.\nUse 'Your Environment' environment.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apikey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://your-instance.maximo.com/maximo"
+    }
+  ],
+  "item": [
+    {
+      "name": "mxapicoa",
+      "item": [
+        {
+          "name": "Create mxapicoa",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapicoa",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapicoa"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "",
+                  "disabled": true
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPICOA"
+          }
+        },
+        {
+          "name": "List mxapicoa",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapicoa?oslc.select=*&oslc.pageSize=20&lean=1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapicoa"
+              ],
+              "query": [
+                {
+                  "key": "savedQuery",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "action",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPICOA"
+          }
+        },
+        {
+          "name": "Create mxapicoa",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapicoa/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapicoa",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "",
+                  "disabled": true
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPICOA with id {id}"
+          }
+        },
+        {
+          "name": "Get mxapicoa by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapicoa/:id?lean=1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapicoa",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPICOA"
+          }
+        },
+        {
+          "name": "Delete mxapicoa",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapicoa/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapicoa",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPICOA for id {id}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "mxapiglcomp",
+      "item": [
+        {
+          "name": "Create mxapiglcomp",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiglcomp/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiglcomp",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "",
+                  "disabled": true
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPIGLCOMP with id {id}"
+          }
+        },
+        {
+          "name": "Get mxapiglcomp by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiglcomp/:id?lean=1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiglcomp",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPIGLCOMP"
+          }
+        },
+        {
+          "name": "Delete mxapiglcomp",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiglcomp/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiglcomp",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPIGLCOMP for id {id}"
+          }
+        },
+        {
+          "name": "Create mxapiglcomp",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiglcomp",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiglcomp"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "",
+                  "disabled": true
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPIGLCOMP"
+          }
+        },
+        {
+          "name": "List mxapiglcomp",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiglcomp?oslc.select=*&oslc.pageSize=20&lean=1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiglcomp"
+              ],
+              "query": [
+                {
+                  "key": "savedQuery",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "action",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPIGLCOMP"
+          }
+        }
+      ]
+    },
+    {
+      "name": "mxapiglconfigure",
+      "item": [
+        {
+          "name": "Create mxapiglconfigure",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiglconfigure/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiglconfigure",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "",
+                  "disabled": true
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPIGLCONFIGURE with id {id}"
+          }
+        },
+        {
+          "name": "Get mxapiglconfigure by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiglconfigure/:id?lean=1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiglconfigure",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPIGLCONFIGURE"
+          }
+        },
+        {
+          "name": "Delete mxapiglconfigure",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiglconfigure/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiglconfigure",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPIGLCONFIGURE for id {id}"
+          }
+        },
+        {
+          "name": "Create mxapiglconfigure",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiglconfigure",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiglconfigure"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "",
+                  "disabled": true
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPIGLCONFIGURE"
+          }
+        },
+        {
+          "name": "List mxapiglconfigure",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiglconfigure?oslc.select=*&oslc.pageSize=20&lean=1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiglconfigure"
+              ],
+              "query": [
+                {
+                  "key": "savedQuery",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "action",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPIGLCONFIGURE"
+          }
+        }
+      ]
+    },
+    {
+      "name": "mxapiproj",
+      "item": [
+        {
+          "name": "Create mxapiproj",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiproj/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiproj",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "",
+                  "disabled": true
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPIPROJ with id {id}"
+          }
+        },
+        {
+          "name": "Get mxapiproj by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiproj/:id?lean=1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiproj",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPIPROJ"
+          }
+        },
+        {
+          "name": "Delete mxapiproj",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiproj/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiproj",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPIPROJ for id {id}"
+          }
+        },
+        {
+          "name": "Create mxapiproj",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiproj",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiproj"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "",
+                  "disabled": true
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPIPROJ"
+          }
+        },
+        {
+          "name": "List mxapiproj",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiproj?oslc.select=*&oslc.pageSize=20&lean=1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiproj"
+              ],
+              "query": [
+                {
+                  "key": "savedQuery",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "action",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPIPROJ"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Common OSLC Actions",
+      "item": [
+        {
+          "name": "POST notify",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=notify",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "notify"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "GET statuslist",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=statuslist",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "statuslist"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET countnewnotf",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=countnewnotf&notfosname=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "countnewnotf"
+                },
+                {
+                  "key": "notfosname",
+                  "value": "",
+                  "disabled": false
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET genreport",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=genreport&attachments=&reportname=&reportformat=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "genreport"
+                },
+                {
+                  "key": "attachments",
+                  "value": "",
+                  "disabled": false
+                },
+                {
+                  "key": "reportname",
+                  "value": "",
+                  "disabled": false
+                },
+                {
+                  "key": "reportformat",
+                  "value": "",
+                  "disabled": false
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST updateimage",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=updateimage",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "updateimage"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "GET notifications",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=notifications&notfosname=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "notifications"
+                },
+                {
+                  "key": "notfosname",
+                  "value": "",
+                  "disabled": false
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST discardedit",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=discardedit",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "discardedit"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "POST addimage",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=addimage",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "addimage"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "GET islockedbyme",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=islockedbyme",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "islockedbyme"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST dismiss",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=dismiss",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "dismiss"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "POST removefrommemory",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=removefrommemory",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "removefrommemory"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "GET evalcondition",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=evalcondition&condition=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "evalcondition"
+                },
+                {
+                  "key": "condition",
+                  "value": "",
+                  "disabled": false
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST bookmark",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=bookmark",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "bookmark"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "POST logesig",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=logesig",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "logesig"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "GET verifyesig",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=verifyesig",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "verifyesig"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST unlock",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=unlock",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "unlock"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "POST subscribe",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=subscribe",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "subscribe"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "POST markasread",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=markasread",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "markasread"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "GET events",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=events",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "events"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET getlist",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=getlist&attribute=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "getlist"
+                },
+                {
+                  "key": "attribute",
+                  "value": "",
+                  "disabled": false
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET testsql",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName?action=testsql",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "testsql"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET listreports",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=listreports",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "listreports"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET sigopgranted",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=sigopgranted&optionname=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "sigopgranted"
+                },
+                {
+                  "key": "app",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "optionname",
+                  "value": "",
+                  "disabled": false
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST logapiaccess",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=logapiaccess",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "logapiaccess"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "POST importfile",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=importfile",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "importfile"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "POST unsubscribe",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=unsubscribe",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "unsubscribe"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "POST addfromdoclib",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=addfromdoclib",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "addfromdoclib"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "POST snoozefromquery",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=snoozefromquery",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "snoozefromquery"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "POST snooze",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=snooze",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "snooze"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "GET isesigneeded",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=isesigneeded&optionname=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "isesigneeded"
+                },
+                {
+                  "key": "optionname",
+                  "value": "",
+                  "disabled": false
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST lock",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=lock",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "lock"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "POST removebookmark",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=removebookmark",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "removebookmark"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "GET new",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName?action=new",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "new"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET activewfinstances",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=activewfinstances",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "activewfinstances"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET canadd",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=canadd",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "canadd"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET candelete",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=candelete",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "candelete"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET countnew",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=countnew",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "countnew"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST changethisquery",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName?action=changethisquery&savedQuery=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "changethisquery"
+                },
+                {
+                  "key": "savedQuery",
+                  "value": "",
+                  "disabled": false
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "POST deleteimage",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=deleteimage",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "deleteimage"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "POST savethisquery",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName?action=savethisquery",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "savethisquery"
+                },
+                {
+                  "key": "querywhere",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "GET duplicate",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=duplicate",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "duplicate"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET islocked",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/:osName/:id?action=islocked",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                ":osName",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "islocked"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

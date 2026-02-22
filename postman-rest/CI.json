@@ -1,0 +1,387 @@
+{
+  "info": {
+    "name": "Maximo REST - IT Infrastructure (CI)",
+    "description": "Maximo IT Infrastructure (CI) REST API - your Maximo instance.\n10 endpoints via /api/os/ pattern.\nUse 'Your Environment' environment.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apikey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://your-instance.maximo.com/maximo"
+    }
+  ],
+  "item": [
+    {
+      "name": "mxapiauthci",
+      "item": [
+        {
+          "name": "Create mxapiauthci",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/os/mxapiauthci/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "os",
+                "mxapiauthci",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPIAUTHCI with id {id}"
+          }
+        },
+        {
+          "name": "Get mxapiauthci by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/os/mxapiauthci/:id?lean=1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "os",
+                "mxapiauthci",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPIAUTHCI"
+          }
+        },
+        {
+          "name": "Delete mxapiauthci",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/os/mxapiauthci/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "os",
+                "mxapiauthci",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPIAUTHCI for id {id}"
+          }
+        },
+        {
+          "name": "Create mxapiauthci",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/os/mxapiauthci",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "os",
+                "mxapiauthci"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPIAUTHCI"
+          }
+        },
+        {
+          "name": "List mxapiauthci",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/os/mxapiauthci?oslc.select=*&oslc.pageSize=20&lean=1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "os",
+                "mxapiauthci"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPIAUTHCI"
+          }
+        }
+      ]
+    },
+    {
+      "name": "mxapicollection",
+      "item": [
+        {
+          "name": "Create mxapicollection",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/os/mxapicollection",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "os",
+                "mxapicollection"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPICOLLECTION"
+          }
+        },
+        {
+          "name": "List mxapicollection",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/os/mxapicollection?oslc.select=*&oslc.pageSize=20&lean=1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "os",
+                "mxapicollection"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPICOLLECTION"
+          }
+        },
+        {
+          "name": "Create mxapicollection",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/os/mxapicollection/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "os",
+                "mxapicollection",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPICOLLECTION with id {id}"
+          }
+        },
+        {
+          "name": "Get mxapicollection by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/os/mxapicollection/:id?lean=1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "os",
+                "mxapicollection",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPICOLLECTION"
+          }
+        },
+        {
+          "name": "Delete mxapicollection",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/os/mxapicollection/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "os",
+                "mxapicollection",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPICOLLECTION for id {id}"
+          }
+        }
+      ]
+    }
+  ]
+}

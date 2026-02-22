@@ -1,0 +1,431 @@
+{
+  "info": {
+    "name": "Maximo REST - Job Plans (PLANS)",
+    "description": "Maximo Job Plans (PLANS) REST API - your Maximo instance.\n11 endpoints via /api/os/ pattern.\nUse 'Your Environment' environment.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apikey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://your-instance.maximo.com/maximo"
+    }
+  ],
+  "item": [
+    {
+      "name": "mxapijobplan",
+      "item": [
+        {
+          "name": "Create mxapijobplan",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/os/mxapijobplan",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "os",
+                "mxapijobplan"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPIJOBPLAN"
+          }
+        },
+        {
+          "name": "List mxapijobplan",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/os/mxapijobplan?oslc.select=*&oslc.pageSize=20&lean=1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "os",
+                "mxapijobplan"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPIJOBPLAN"
+          }
+        },
+        {
+          "name": "Create mxapijobplan",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/os/mxapijobplan/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "os",
+                "mxapijobplan",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPIJOBPLAN with id {id}"
+          }
+        },
+        {
+          "name": "Get mxapijobplan by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/os/mxapijobplan/:id?lean=1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "os",
+                "mxapijobplan",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPIJOBPLAN"
+          }
+        },
+        {
+          "name": "Delete mxapijobplan",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/os/mxapijobplan/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "os",
+                "mxapijobplan",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPIJOBPLAN for id {id}"
+          }
+        },
+        {
+          "name": "Actions",
+          "item": [
+            {
+              "name": "POST wsmethod:wsmethod:changeStatus",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/os/mxapijobplan/:id?action=wsmethod:changeStatus",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "os",
+                    "mxapijobplan",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:changeStatus"
+                    }
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "mxapiroutes",
+      "item": [
+        {
+          "name": "Create mxapiroutes",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/os/mxapiroutes/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "os",
+                "mxapiroutes",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPIROUTES with id {id}"
+          }
+        },
+        {
+          "name": "Get mxapiroutes by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/os/mxapiroutes/:id?lean=1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "os",
+                "mxapiroutes",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPIROUTES"
+          }
+        },
+        {
+          "name": "Delete mxapiroutes",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/os/mxapiroutes/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "os",
+                "mxapiroutes",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPIROUTES for id {id}"
+          }
+        },
+        {
+          "name": "Create mxapiroutes",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/os/mxapiroutes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "os",
+                "mxapiroutes"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPIROUTES"
+          }
+        },
+        {
+          "name": "List mxapiroutes",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/os/mxapiroutes?oslc.select=*&oslc.pageSize=20&lean=1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "os",
+                "mxapiroutes"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPIROUTES"
+          }
+        }
+      ]
+    }
+  ]
+}

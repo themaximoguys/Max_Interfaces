@@ -1,0 +1,211 @@
+{
+  "info": {
+    "name": "Maximo REST - Company (COMPANY)",
+    "description": "Maximo Company Management (COMPANY) REST API - your Maximo instance.\n5 endpoints via /api/os/ pattern.\nUse 'Your Environment' environment.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apikey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://your-instance.maximo.com/maximo"
+    }
+  ],
+  "item": [
+    {
+      "name": "mxapicommodity",
+      "item": [
+        {
+          "name": "Create mxapicommodity",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/os/mxapicommodity/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "os",
+                "mxapicommodity",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPICOMMODITY with id {id}"
+          }
+        },
+        {
+          "name": "Get mxapicommodity by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/os/mxapicommodity/:id?lean=1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "os",
+                "mxapicommodity",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPICOMMODITY"
+          }
+        },
+        {
+          "name": "Delete mxapicommodity",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/os/mxapicommodity/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "os",
+                "mxapicommodity",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPICOMMODITY for id {id}"
+          }
+        },
+        {
+          "name": "Create mxapicommodity",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/os/mxapicommodity",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "os",
+                "mxapicommodity"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPICOMMODITY"
+          }
+        },
+        {
+          "name": "List mxapicommodity",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/os/mxapicommodity?oslc.select=*&oslc.pageSize=20&lean=1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "os",
+                "mxapicommodity"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPICOMMODITY"
+          }
+        }
+      ]
+    }
+  ]
+}

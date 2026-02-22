@@ -1,0 +1,4209 @@
+{
+  "info": {
+    "name": "Maximo OSLC - Assets (ASSET)",
+    "description": "Maximo Assets (ASSET) - your Maximo instance.\n118 endpoints from OAS3 spec.\nUse 'Your Environment' environment.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apikey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://your-instance.maximo.com/maximo"
+    }
+  ],
+  "item": [
+    {
+      "name": "mxapiahblthreshold",
+      "item": [
+        {
+          "name": "Get mxapiahblthreshold by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiahblthreshold/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiahblthreshold",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPIAHBLTHRESHOLD"
+          }
+        },
+        {
+          "name": "List mxapiahblthreshold",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiahblthreshold",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiahblthreshold"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPIAHBLTHRESHOLD"
+          }
+        },
+        {
+          "name": "Create mxapiahblthreshold",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiahblthreshold",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiahblthreshold"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPIAHBLTHRESHOLD"
+          }
+        },
+        {
+          "name": "Update mxapiahblthreshold",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-method-override",
+                "value": "PATCH"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiahblthreshold/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiahblthreshold",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPIAHBLTHRESHOLD with id {id}"
+          }
+        },
+        {
+          "name": "Delete mxapiahblthreshold",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiahblthreshold/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiahblthreshold",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPIAHBLTHRESHOLD for id {id}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "mxapiahdriverlib",
+      "item": [
+        {
+          "name": "Get mxapiahdriverlib by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiahdriverlib/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiahdriverlib",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPIAHDRIVERLIB"
+          }
+        },
+        {
+          "name": "List mxapiahdriverlib",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiahdriverlib",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiahdriverlib"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPIAHDRIVERLIB"
+          }
+        },
+        {
+          "name": "Create mxapiahdriverlib",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiahdriverlib",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiahdriverlib"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPIAHDRIVERLIB"
+          }
+        },
+        {
+          "name": "Update mxapiahdriverlib",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-method-override",
+                "value": "PATCH"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiahdriverlib/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiahdriverlib",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPIAHDRIVERLIB with id {id}"
+          }
+        },
+        {
+          "name": "Delete mxapiahdriverlib",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiahdriverlib/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiahdriverlib",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPIAHDRIVERLIB for id {id}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "mxapiahmethodology",
+      "item": [
+        {
+          "name": "Get mxapiahmethodology by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiahmethodology/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiahmethodology",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPIAHMETHODOLOGY"
+          }
+        },
+        {
+          "name": "List mxapiahmethodology",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiahmethodology",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiahmethodology"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPIAHMETHODOLOGY"
+          }
+        },
+        {
+          "name": "Create mxapiahmethodology",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiahmethodology",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiahmethodology"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPIAHMETHODOLOGY"
+          }
+        },
+        {
+          "name": "Update mxapiahmethodology",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-method-override",
+                "value": "PATCH"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiahmethodology/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiahmethodology",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPIAHMETHODOLOGY with id {id}"
+          }
+        },
+        {
+          "name": "Delete mxapiahmethodology",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiahmethodology/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiahmethodology",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPIAHMETHODOLOGY for id {id}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "mxapiasset",
+      "item": [
+        {
+          "name": "Get mxapiasset by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiasset/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiasset",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPIASSET"
+          }
+        },
+        {
+          "name": "List mxapiasset",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiasset",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiasset"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPIASSET"
+          }
+        },
+        {
+          "name": "Create mxapiasset",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiasset",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiasset"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPIASSET"
+          }
+        },
+        {
+          "name": "Update mxapiasset",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-method-override",
+                "value": "PATCH"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiasset/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiasset",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPIASSET with id {id}"
+          }
+        },
+        {
+          "name": "Delete mxapiasset",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiasset/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiasset",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPIASSET for id {id}"
+          }
+        },
+        {
+          "name": "Actions",
+          "item": [
+            {
+              "name": "GET wsmethod:hasActivePM",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiasset/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiasset",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:hasActivePM"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "GET wsmethod:hasActiveRoutes",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiasset/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiasset",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:hasActiveRoutes"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "GET wsmethod:hasActiveSP",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiasset/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiasset",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:hasActiveSP"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:changeStatus",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiasset/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiasset",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:changeStatus"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:createChange",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiasset/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiasset",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:createChange"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:createIncident",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiasset/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiasset",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:createIncident"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:createProblem",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiasset/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiasset",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:createProblem"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:createServiceRequest",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiasset/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiasset",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:createServiceRequest"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:createWorkorder",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiasset/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiasset",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:createWorkorder"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:moveSingleAsset",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiasset/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiasset",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:moveSingleAsset"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "mxapiassetattribute",
+      "item": [
+        {
+          "name": "Get mxapiassetattribute by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiassetattribute/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiassetattribute",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPIASSETATTRIBUTE"
+          }
+        },
+        {
+          "name": "List mxapiassetattribute",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiassetattribute",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiassetattribute"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPIASSETATTRIBUTE"
+          }
+        },
+        {
+          "name": "Create mxapiassetattribute",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiassetattribute",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiassetattribute"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPIASSETATTRIBUTE"
+          }
+        },
+        {
+          "name": "Update mxapiassetattribute",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-method-override",
+                "value": "PATCH"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiassetattribute/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiassetattribute",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPIASSETATTRIBUTE with id {id}"
+          }
+        },
+        {
+          "name": "Delete mxapiassetattribute",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiassetattribute/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiassetattribute",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPIASSETATTRIBUTE for id {id}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "mxapiassetmeter",
+      "item": [
+        {
+          "name": "Get mxapiassetmeter by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiassetmeter/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiassetmeter",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPIASSETMETER"
+          }
+        },
+        {
+          "name": "List mxapiassetmeter",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiassetmeter",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiassetmeter"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPIASSETMETER"
+          }
+        },
+        {
+          "name": "Create mxapiassetmeter",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiassetmeter",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiassetmeter"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPIASSETMETER"
+          }
+        },
+        {
+          "name": "Update mxapiassetmeter",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-method-override",
+                "value": "PATCH"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiassetmeter/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiassetmeter",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPIASSETMETER with id {id}"
+          }
+        },
+        {
+          "name": "Delete mxapiassetmeter",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiassetmeter/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiassetmeter",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPIASSETMETER for id {id}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "mxapiconversion",
+      "item": [
+        {
+          "name": "Get mxapiconversion by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiconversion/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiconversion",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPICONVERSION"
+          }
+        },
+        {
+          "name": "List mxapiconversion",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiconversion",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiconversion"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPICONVERSION"
+          }
+        },
+        {
+          "name": "Create mxapiconversion",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiconversion",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiconversion"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPICONVERSION"
+          }
+        },
+        {
+          "name": "Update mxapiconversion",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-method-override",
+                "value": "PATCH"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiconversion/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiconversion",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPICONVERSION with id {id}"
+          }
+        },
+        {
+          "name": "Delete mxapiconversion",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiconversion/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiconversion",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPICONVERSION for id {id}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "mxapifailurecode",
+      "item": [
+        {
+          "name": "Get mxapifailurecode by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapifailurecode/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapifailurecode",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPIFAILURECODE"
+          }
+        },
+        {
+          "name": "List mxapifailurecode",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapifailurecode",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapifailurecode"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPIFAILURECODE"
+          }
+        },
+        {
+          "name": "Create mxapifailurecode",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapifailurecode",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapifailurecode"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPIFAILURECODE"
+          }
+        },
+        {
+          "name": "Update mxapifailurecode",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-method-override",
+                "value": "PATCH"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapifailurecode/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapifailurecode",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPIFAILURECODE with id {id}"
+          }
+        },
+        {
+          "name": "Delete mxapifailurecode",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapifailurecode/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapifailurecode",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPIFAILURECODE for id {id}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "mxapifailurelist",
+      "item": [
+        {
+          "name": "Get mxapifailurelist by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapifailurelist/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapifailurelist",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPIFAILURELIST"
+          }
+        },
+        {
+          "name": "List mxapifailurelist",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapifailurelist",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapifailurelist"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPIFAILURELIST"
+          }
+        },
+        {
+          "name": "Create mxapifailurelist",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapifailurelist",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapifailurelist"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPIFAILURELIST"
+          }
+        },
+        {
+          "name": "Update mxapifailurelist",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-method-override",
+                "value": "PATCH"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapifailurelist/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapifailurelist",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPIFAILURELIST with id {id}"
+          }
+        },
+        {
+          "name": "Delete mxapifailurelist",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapifailurelist/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapifailurelist",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPIFAILURELIST for id {id}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "mxapiinsight",
+      "item": [
+        {
+          "name": "Get mxapiinsight by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiinsight/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiinsight",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPIINSIGHT"
+          }
+        },
+        {
+          "name": "List mxapiinsight",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiinsight",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiinsight"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPIINSIGHT"
+          }
+        },
+        {
+          "name": "Create mxapiinsight",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiinsight",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiinsight"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPIINSIGHT"
+          }
+        },
+        {
+          "name": "Update mxapiinsight",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-method-override",
+                "value": "PATCH"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiinsight/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiinsight",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPIINSIGHT with id {id}"
+          }
+        },
+        {
+          "name": "Delete mxapiinsight",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiinsight/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiinsight",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPIINSIGHT for id {id}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "mxapiinsightfactor",
+      "item": [
+        {
+          "name": "Get mxapiinsightfactor by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiinsightfactor/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiinsightfactor",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPIINSIGHTFACTOR"
+          }
+        },
+        {
+          "name": "List mxapiinsightfactor",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiinsightfactor",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiinsightfactor"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPIINSIGHTFACTOR"
+          }
+        },
+        {
+          "name": "Create mxapiinsightfactor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiinsightfactor",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiinsightfactor"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPIINSIGHTFACTOR"
+          }
+        },
+        {
+          "name": "Update mxapiinsightfactor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-method-override",
+                "value": "PATCH"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiinsightfactor/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiinsightfactor",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPIINSIGHTFACTOR with id {id}"
+          }
+        },
+        {
+          "name": "Delete mxapiinsightfactor",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiinsightfactor/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiinsightfactor",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPIINSIGHTFACTOR for id {id}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "mxapilocancestor",
+      "item": [
+        {
+          "name": "Get mxapilocancestor by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapilocancestor/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapilocancestor",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPILOCANCESTOR"
+          }
+        },
+        {
+          "name": "List mxapilocancestor",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapilocancestor",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapilocancestor"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPILOCANCESTOR"
+          }
+        },
+        {
+          "name": "Create mxapilocancestor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapilocancestor",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapilocancestor"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPILOCANCESTOR"
+          }
+        },
+        {
+          "name": "Update mxapilocancestor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-method-override",
+                "value": "PATCH"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapilocancestor/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapilocancestor",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPILOCANCESTOR with id {id}"
+          }
+        },
+        {
+          "name": "Delete mxapilocancestor",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapilocancestor/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapilocancestor",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPILOCANCESTOR for id {id}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "mxapilocation",
+      "item": [
+        {
+          "name": "Get mxapilocation by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapilocation/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapilocation",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPILOCATION"
+          }
+        },
+        {
+          "name": "List mxapilocation",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapilocation",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapilocation"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPILOCATION"
+          }
+        },
+        {
+          "name": "Create mxapilocation",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapilocation",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapilocation"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPILOCATION"
+          }
+        },
+        {
+          "name": "Update mxapilocation",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-method-override",
+                "value": "PATCH"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapilocation/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapilocation",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPILOCATION with id {id}"
+          }
+        },
+        {
+          "name": "Delete mxapilocation",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapilocation/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapilocation",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPILOCATION for id {id}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "mxapilocationmeter",
+      "item": [
+        {
+          "name": "Get mxapilocationmeter by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapilocationmeter/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapilocationmeter",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPILOCATIONMETER"
+          }
+        },
+        {
+          "name": "List mxapilocationmeter",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapilocationmeter",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapilocationmeter"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPILOCATIONMETER"
+          }
+        },
+        {
+          "name": "Create mxapilocationmeter",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapilocationmeter",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapilocationmeter"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPILOCATIONMETER"
+          }
+        },
+        {
+          "name": "Update mxapilocationmeter",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-method-override",
+                "value": "PATCH"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapilocationmeter/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapilocationmeter",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPILOCATIONMETER with id {id}"
+          }
+        },
+        {
+          "name": "Delete mxapilocationmeter",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapilocationmeter/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapilocationmeter",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPILOCATIONMETER for id {id}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "mxapilocsys",
+      "item": [
+        {
+          "name": "Get mxapilocsys by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapilocsys/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapilocsys",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPILOCSYS"
+          }
+        },
+        {
+          "name": "List mxapilocsys",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapilocsys",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapilocsys"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPILOCSYS"
+          }
+        },
+        {
+          "name": "Create mxapilocsys",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapilocsys",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapilocsys"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPILOCSYS"
+          }
+        },
+        {
+          "name": "Update mxapilocsys",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-method-override",
+                "value": "PATCH"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapilocsys/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapilocsys",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPILOCSYS with id {id}"
+          }
+        },
+        {
+          "name": "Delete mxapilocsys",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapilocsys/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapilocsys",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPILOCSYS for id {id}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "mxapilocsystem",
+      "item": [
+        {
+          "name": "Get mxapilocsystem by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapilocsystem/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapilocsystem",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPILOCSYSTEM"
+          }
+        },
+        {
+          "name": "List mxapilocsystem",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapilocsystem",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapilocsystem"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPILOCSYSTEM"
+          }
+        },
+        {
+          "name": "Create mxapilocsystem",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapilocsystem",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapilocsystem"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPILOCSYSTEM"
+          }
+        },
+        {
+          "name": "Update mxapilocsystem",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-method-override",
+                "value": "PATCH"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapilocsystem/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapilocsystem",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPILOCSYSTEM with id {id}"
+          }
+        },
+        {
+          "name": "Delete mxapilocsystem",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapilocsystem/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapilocsystem",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPILOCSYSTEM for id {id}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "mxapimeter",
+      "item": [
+        {
+          "name": "Get mxapimeter by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapimeter/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapimeter",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPIMETER"
+          }
+        },
+        {
+          "name": "List mxapimeter",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapimeter",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapimeter"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPIMETER"
+          }
+        },
+        {
+          "name": "Create mxapimeter",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapimeter",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapimeter"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPIMETER"
+          }
+        },
+        {
+          "name": "Update mxapimeter",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-method-override",
+                "value": "PATCH"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapimeter/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapimeter",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPIMETER with id {id}"
+          }
+        },
+        {
+          "name": "Delete mxapimeter",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapimeter/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapimeter",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPIMETER for id {id}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "mxapimeterdata",
+      "item": [
+        {
+          "name": "Get mxapimeterdata by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapimeterdata/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapimeterdata",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPIMETERDATA"
+          }
+        },
+        {
+          "name": "List mxapimeterdata",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapimeterdata",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapimeterdata"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPIMETERDATA"
+          }
+        },
+        {
+          "name": "Create mxapimeterdata",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapimeterdata",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapimeterdata"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPIMETERDATA"
+          }
+        },
+        {
+          "name": "Update mxapimeterdata",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-method-override",
+                "value": "PATCH"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapimeterdata/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapimeterdata",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPIMETERDATA with id {id}"
+          }
+        },
+        {
+          "name": "Delete mxapimeterdata",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapimeterdata/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapimeterdata",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPIMETERDATA for id {id}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "mxapioperloc",
+      "item": [
+        {
+          "name": "Get mxapioperloc by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapioperloc/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapioperloc",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPIOPERLOC"
+          }
+        },
+        {
+          "name": "List mxapioperloc",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapioperloc",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapioperloc"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPIOPERLOC"
+          }
+        },
+        {
+          "name": "Create mxapioperloc",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapioperloc",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapioperloc"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPIOPERLOC"
+          }
+        },
+        {
+          "name": "Update mxapioperloc",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-method-override",
+                "value": "PATCH"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapioperloc/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapioperloc",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPIOPERLOC with id {id}"
+          }
+        },
+        {
+          "name": "Delete mxapioperloc",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapioperloc/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapioperloc",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPIOPERLOC for id {id}"
+          }
+        },
+        {
+          "name": "Actions",
+          "item": [
+            {
+              "name": "POST wsmethod:changeStatus",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapioperloc/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapioperloc",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:changeStatus"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:createChange",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapioperloc/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapioperloc",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:createChange"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:createIncident",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapioperloc/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapioperloc",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:createIncident"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:createProblem",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapioperloc/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapioperloc",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:createProblem"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:createServiceRequest",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapioperloc/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapioperloc",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:createServiceRequest"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:createWorkorder",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapioperloc/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapioperloc",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:createWorkorder"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "mxapiscoringrange",
+      "item": [
+        {
+          "name": "Get mxapiscoringrange by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiscoringrange/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiscoringrange",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPISCORINGRANGE"
+          }
+        },
+        {
+          "name": "List mxapiscoringrange",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiscoringrange",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiscoringrange"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPISCORINGRANGE"
+          }
+        },
+        {
+          "name": "Create mxapiscoringrange",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiscoringrange",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiscoringrange"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPISCORINGRANGE"
+          }
+        },
+        {
+          "name": "Update mxapiscoringrange",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-method-override",
+                "value": "PATCH"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiscoringrange/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiscoringrange",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPISCORINGRANGE with id {id}"
+          }
+        },
+        {
+          "name": "Delete mxapiscoringrange",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiscoringrange/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiscoringrange",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPISCORINGRANGE for id {id}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "mxapilocations",
+      "item": [
+        {
+          "name": "Get mxapilocations by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapilocations/:id?lean=1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapilocations",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPILOCATIONS"
+          }
+        },
+        {
+          "name": "List mxapilocations",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapilocations?oslc.select=*&oslc.pageSize=20&lean=1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapilocations"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPILOCATIONS"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5410 @@
+{
+  "info": {
+    "name": "Maximo OSLC - Work Orders (WO)",
+    "description": "Maximo Work Orders (WO) - your Maximo instance.\n166 endpoints from OAS3 spec.\nUse 'Your Environment' environment.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apikey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://your-instance.maximo.com/maximo"
+    }
+  ],
+  "item": [
+    {
+      "name": "mxapiassignment",
+      "item": [
+        {
+          "name": "Get mxapiassignment by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiassignment/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiassignment",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPIASSIGNMENT"
+          }
+        },
+        {
+          "name": "List mxapiassignment",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiassignment",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiassignment"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPIASSIGNMENT"
+          }
+        },
+        {
+          "name": "Create mxapiassignment",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiassignment",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiassignment"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPIASSIGNMENT"
+          }
+        },
+        {
+          "name": "Update mxapiassignment",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-method-override",
+                "value": "PATCH"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiassignment/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiassignment",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPIASSIGNMENT with id {id}"
+          }
+        },
+        {
+          "name": "Delete mxapiassignment",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiassignment/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiassignment",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPIASSIGNMENT for id {id}"
+          }
+        },
+        {
+          "name": "Actions",
+          "item": [
+            {
+              "name": "POST wsmethod:assignLabor",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiassignment/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiassignment",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:assignLabor"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:completeAssignment",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiassignment/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiassignment",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:completeAssignment"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:finishAssignment",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiassignment/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiassignment",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:finishAssignment"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:interruptAssignment",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiassignment/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiassignment",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:interruptAssignment"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:startAssignment",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiassignment/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiassignment",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:startAssignment"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "mxapiempact",
+      "item": [
+        {
+          "name": "Get mxapiempact by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiempact/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiempact",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPIEMPACT"
+          }
+        },
+        {
+          "name": "List mxapiempact",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiempact",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiempact"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPIEMPACT"
+          }
+        },
+        {
+          "name": "Create mxapiempact",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiempact",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiempact"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPIEMPACT"
+          }
+        },
+        {
+          "name": "Update mxapiempact",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-method-override",
+                "value": "PATCH"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiempact/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiempact",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPIEMPACT with id {id}"
+          }
+        },
+        {
+          "name": "Delete mxapiempact",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiempact/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiempact",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPIEMPACT for id {id}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "mxapiinspfield",
+      "item": [
+        {
+          "name": "Get mxapiinspfield by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiinspfield/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiinspfield",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPIINSPFIELD"
+          }
+        },
+        {
+          "name": "List mxapiinspfield",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiinspfield",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiinspfield"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPIINSPFIELD"
+          }
+        },
+        {
+          "name": "Create mxapiinspfield",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiinspfield",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiinspfield"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPIINSPFIELD"
+          }
+        },
+        {
+          "name": "Update mxapiinspfield",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-method-override",
+                "value": "PATCH"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiinspfield/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiinspfield",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPIINSPFIELD with id {id}"
+          }
+        },
+        {
+          "name": "Delete mxapiinspfield",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiinspfield/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiinspfield",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPIINSPFIELD for id {id}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "mxapiinspform",
+      "item": [
+        {
+          "name": "Get mxapiinspform by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiinspform/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiinspform",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPIINSPFORM"
+          }
+        },
+        {
+          "name": "List mxapiinspform",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiinspform",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiinspform"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPIINSPFORM"
+          }
+        },
+        {
+          "name": "Create mxapiinspform",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiinspform",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiinspform"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPIINSPFORM"
+          }
+        },
+        {
+          "name": "Update mxapiinspform",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-method-override",
+                "value": "PATCH"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiinspform/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiinspform",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPIINSPFORM with id {id}"
+          }
+        },
+        {
+          "name": "Delete mxapiinspform",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiinspform/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiinspform",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPIINSPFORM for id {id}"
+          }
+        },
+        {
+          "name": "Actions",
+          "item": [
+            {
+              "name": "GET wsmethod:getRevision",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiinspform/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiinspform",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:getRevision"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "GET wsmethod:voiceDeploy",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiinspform/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiinspform",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:voiceDeploy"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "GET wsmethod:voiceTransactionStatus",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiinspform/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiinspform",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:voiceTransactionStatus"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "GET wsmethod:voiceUndeploy",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiinspform/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiinspform",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:voiceUndeploy"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:changeFormStatus",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiinspform/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiinspform",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:changeFormStatus"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "mxapiinspformstatus",
+      "item": [
+        {
+          "name": "Get mxapiinspformstatus by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiinspformstatus/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiinspformstatus",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPIINSPFORMSTATUS"
+          }
+        },
+        {
+          "name": "List mxapiinspformstatus",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiinspformstatus",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiinspformstatus"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPIINSPFORMSTATUS"
+          }
+        },
+        {
+          "name": "Create mxapiinspformstatus",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiinspformstatus",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiinspformstatus"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPIINSPFORMSTATUS"
+          }
+        },
+        {
+          "name": "Update mxapiinspformstatus",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-method-override",
+                "value": "PATCH"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiinspformstatus/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiinspformstatus",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPIINSPFORMSTATUS with id {id}"
+          }
+        },
+        {
+          "name": "Delete mxapiinspformstatus",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiinspformstatus/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiinspformstatus",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPIINSPFORMSTATUS for id {id}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "mxapiinspformusewith",
+      "item": [
+        {
+          "name": "Get mxapiinspformusewith by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiinspformusewith/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiinspformusewith",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPIINSPFORMUSEWITH"
+          }
+        },
+        {
+          "name": "List mxapiinspformusewith",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiinspformusewith",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiinspformusewith"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPIINSPFORMUSEWITH"
+          }
+        },
+        {
+          "name": "Create mxapiinspformusewith",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiinspformusewith",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiinspformusewith"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPIINSPFORMUSEWITH"
+          }
+        },
+        {
+          "name": "Update mxapiinspformusewith",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-method-override",
+                "value": "PATCH"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiinspformusewith/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiinspformusewith",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPIINSPFORMUSEWITH with id {id}"
+          }
+        },
+        {
+          "name": "Delete mxapiinspformusewith",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiinspformusewith/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiinspformusewith",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPIINSPFORMUSEWITH for id {id}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "mxapiinspresult",
+      "item": [
+        {
+          "name": "Get mxapiinspresult by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiinspresult/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiinspresult",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPIINSPRESULT"
+          }
+        },
+        {
+          "name": "List mxapiinspresult",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiinspresult",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiinspresult"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPIINSPRESULT"
+          }
+        },
+        {
+          "name": "Create mxapiinspresult",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiinspresult",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiinspresult"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPIINSPRESULT"
+          }
+        },
+        {
+          "name": "Update mxapiinspresult",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-method-override",
+                "value": "PATCH"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiinspresult/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiinspresult",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPIINSPRESULT with id {id}"
+          }
+        },
+        {
+          "name": "Delete mxapiinspresult",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiinspresult/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiinspresult",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPIINSPRESULT for id {id}"
+          }
+        },
+        {
+          "name": "Actions",
+          "item": [
+            {
+              "name": "POST wsmethod:changeResultStatus",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiinspresult/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiinspresult",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:changeResultStatus"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:changeResultStatusMobile",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiinspresult/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiinspresult",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:changeResultStatusMobile"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:postInspInferenceByModel",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiinspresult/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiinspresult",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:postInspInferenceByModel"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:updateAssetLocMeter",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiinspresult/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiinspresult",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:updateAssetLocMeter"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "mxapiwo",
+      "item": [
+        {
+          "name": "Get mxapiwo by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiwo/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiwo",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPIWO"
+          }
+        },
+        {
+          "name": "List mxapiwo",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiwo",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiwo"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPIWO"
+          }
+        },
+        {
+          "name": "Create mxapiwo",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiwo",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiwo"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPIWO"
+          }
+        },
+        {
+          "name": "Update mxapiwo",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-method-override",
+                "value": "PATCH"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiwo/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiwo",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPIWO with id {id}"
+          }
+        },
+        {
+          "name": "Delete mxapiwo",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiwo/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiwo",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPIWO for id {id}"
+          }
+        },
+        {
+          "name": "Actions",
+          "item": [
+            {
+              "name": "GET wsmethod:getAvailableCrew",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwo/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwo",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:getAvailableCrew"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "GET wsmethod:getAvailableLabor",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwo/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwo",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:getAvailableLabor"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "GET wsmethod:getJobPlans",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwo/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwo",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:getJobPlans"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "GET wsmethod:getWorkLog",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwo/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwo",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:getWorkLog"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:applyOwner",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwo/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwo",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:applyOwner"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:applyOwnerGroup",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwo/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwo",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:applyOwnerGroup"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:changeStatus",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwo/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwo",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:changeStatus"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:changeWOStatus",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwo/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwo",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:changeWOStatus"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:createAssignmentwithAssignedLabor",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwo/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwo",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:createAssignmentwithAssignedLabor"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:createChange",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwo/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwo",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:createChange"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:createFollowUp",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwo/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwo",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:createFollowUp"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:createJPFromWO",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwo/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwo",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:createJPFromWO"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:createProblem",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwo/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwo",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:createProblem"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:downtimereport",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwo/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwo",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:downtimereport"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:generateWORelRecord",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwo/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwo",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:generateWORelRecord"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:ownership",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwo/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwo",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:ownership"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:removeSafetyPlan",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwo/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwo",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:removeSafetyPlan"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:removeWorkPlan",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwo/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwo",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:removeWorkPlan"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:reportDowntime",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwo/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwo",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:reportDowntime"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:startTimer",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwo/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwo",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:startTimer"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:startTimerStartDate",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwo/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwo",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:startTimerStartDate"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:stopTimer",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwo/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwo",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:stopTimer"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:stopTimerStartFinishDates",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwo/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwo",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:stopTimerStartFinishDates"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "mxapiwodetail",
+      "item": [
+        {
+          "name": "Get mxapiwodetail by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiwodetail/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiwodetail",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPIWODETAIL"
+          }
+        },
+        {
+          "name": "List mxapiwodetail",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiwodetail",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiwodetail"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPIWODETAIL"
+          }
+        },
+        {
+          "name": "Create mxapiwodetail",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiwodetail",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiwodetail"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPIWODETAIL"
+          }
+        },
+        {
+          "name": "Update mxapiwodetail",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-method-override",
+                "value": "PATCH"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiwodetail/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiwodetail",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPIWODETAIL with id {id}"
+          }
+        },
+        {
+          "name": "Delete mxapiwodetail",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiwodetail/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiwodetail",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPIWODETAIL for id {id}"
+          }
+        },
+        {
+          "name": "Actions",
+          "item": [
+            {
+              "name": "GET wsmethod:getAvailableCrew",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwodetail/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwodetail",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:getAvailableCrew"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "GET wsmethod:getAvailableLabor",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwodetail/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwodetail",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:getAvailableLabor"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "GET wsmethod:getJobPlans",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwodetail/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwodetail",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:getJobPlans"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "GET wsmethod:getWorkLog",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwodetail/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwodetail",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:getWorkLog"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:applyOwner",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwodetail/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwodetail",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:applyOwner"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:applyOwnerGroup",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwodetail/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwodetail",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:applyOwnerGroup"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:changeStatus",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwodetail/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwodetail",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:changeStatus"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:changeWOStatus",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwodetail/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwodetail",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:changeWOStatus"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:createAssignmentwithAssignedLabor",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwodetail/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwodetail",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:createAssignmentwithAssignedLabor"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:createChange",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwodetail/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwodetail",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:createChange"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:createFollowUp",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwodetail/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwodetail",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:createFollowUp"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:createJPFromWO",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwodetail/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwodetail",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:createJPFromWO"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:createProblem",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwodetail/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwodetail",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:createProblem"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:downtimereport",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwodetail/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwodetail",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:downtimereport"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:generateWORelRecord",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwodetail/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwodetail",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:generateWORelRecord"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:ownership",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwodetail/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwodetail",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:ownership"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:removeSafetyPlan",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwodetail/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwodetail",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:removeSafetyPlan"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:removeWorkPlan",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwodetail/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwodetail",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:removeWorkPlan"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:reportDowntime",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwodetail/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwodetail",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:reportDowntime"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:startTimer",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwodetail/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwodetail",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:startTimer"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:startTimerStartDate",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwodetail/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwodetail",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:startTimerStartDate"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:stopTimer",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwodetail/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwodetail",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:stopTimer"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:stopTimerStartFinishDates",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwodetail/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwodetail",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:stopTimerStartFinishDates"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "mxapiwohier",
+      "item": [
+        {
+          "name": "Get mxapiwohier by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiwohier/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiwohier",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPIWOHIER"
+          }
+        },
+        {
+          "name": "List mxapiwohier",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiwohier",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiwohier"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPIWOHIER"
+          }
+        },
+        {
+          "name": "Create mxapiwohier",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiwohier",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiwohier"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPIWOHIER"
+          }
+        },
+        {
+          "name": "Update mxapiwohier",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-method-override",
+                "value": "PATCH"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiwohier/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiwohier",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPIWOHIER with id {id}"
+          }
+        },
+        {
+          "name": "Delete mxapiwohier",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiwohier/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiwohier",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPIWOHIER for id {id}"
+          }
+        },
+        {
+          "name": "Actions",
+          "item": [
+            {
+              "name": "GET wsmethod:getAvailableCrew",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwohier/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwohier",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:getAvailableCrew"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "GET wsmethod:getAvailableLabor",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwohier/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwohier",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:getAvailableLabor"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "GET wsmethod:getJobPlans",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwohier/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwohier",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:getJobPlans"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "GET wsmethod:getWorkLog",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwohier/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwohier",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:getWorkLog"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:applyOwner",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwohier/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwohier",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:applyOwner"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:applyOwnerGroup",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwohier/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwohier",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:applyOwnerGroup"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:changeStatus",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwohier/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwohier",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:changeStatus"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:changeWOStatus",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwohier/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwohier",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:changeWOStatus"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:createAssignmentwithAssignedLabor",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwohier/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwohier",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:createAssignmentwithAssignedLabor"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:createChange",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwohier/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwohier",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:createChange"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:createFollowUp",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwohier/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwohier",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:createFollowUp"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:createJPFromWO",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwohier/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwohier",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:createJPFromWO"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:createProblem",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwohier/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwohier",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:createProblem"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:downtimereport",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwohier/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwohier",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:downtimereport"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:generateWORelRecord",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwohier/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwohier",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:generateWORelRecord"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:ownership",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwohier/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwohier",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:ownership"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:removeSafetyPlan",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwohier/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwohier",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:removeSafetyPlan"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:removeWorkPlan",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwohier/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwohier",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:removeWorkPlan"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:reportDowntime",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwohier/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwohier",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:reportDowntime"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:startTimer",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwohier/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwohier",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:startTimer"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:startTimerStartDate",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwohier/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwohier",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:startTimerStartDate"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:stopTimer",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwohier/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwohier",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:stopTimer"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:stopTimerStartFinishDates",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwohier/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwohier",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:stopTimerStartFinishDates"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "mxapiworklog",
+      "item": [
+        {
+          "name": "Get mxapiworklog by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiworklog/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiworklog",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPIWORKLOG"
+          }
+        },
+        {
+          "name": "List mxapiworklog",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiworklog",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiworklog"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPIWORKLOG"
+          }
+        },
+        {
+          "name": "Create mxapiworklog",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiworklog",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiworklog"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPIWORKLOG"
+          }
+        },
+        {
+          "name": "Update mxapiworklog",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-method-override",
+                "value": "PATCH"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiworklog/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiworklog",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPIWORKLOG with id {id}"
+          }
+        },
+        {
+          "name": "Delete mxapiworklog",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiworklog/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiworklog",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPIWORKLOG for id {id}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "mxapiwosrvad",
+      "item": [
+        {
+          "name": "Get mxapiwosrvad by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiwosrvad/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiwosrvad",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPIWOSRVAD"
+          }
+        },
+        {
+          "name": "List mxapiwosrvad",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiwosrvad",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiwosrvad"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPIWOSRVAD"
+          }
+        },
+        {
+          "name": "Create mxapiwosrvad",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiwosrvad",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiwosrvad"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPIWOSRVAD"
+          }
+        },
+        {
+          "name": "Update mxapiwosrvad",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-method-override",
+                "value": "PATCH"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiwosrvad/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiwosrvad",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPIWOSRVAD with id {id}"
+          }
+        },
+        {
+          "name": "Delete mxapiwosrvad",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapiwosrvad/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapiwosrvad",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPIWOSRVAD for id {id}"
+          }
+        },
+        {
+          "name": "Actions",
+          "item": [
+            {
+              "name": "GET wsmethod:getAvailableCrew",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwosrvad/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwosrvad",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:getAvailableCrew"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "GET wsmethod:getAvailableLabor",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwosrvad/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwosrvad",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:getAvailableLabor"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "GET wsmethod:getJobPlans",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwosrvad/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwosrvad",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:getJobPlans"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "GET wsmethod:getWorkLog",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwosrvad/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwosrvad",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:getWorkLog"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:applyOwner",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwosrvad/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwosrvad",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:applyOwner"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:applyOwnerGroup",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwosrvad/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwosrvad",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:applyOwnerGroup"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:changeStatus",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwosrvad/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwosrvad",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:changeStatus"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:changeWOStatus",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwosrvad/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwosrvad",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:changeWOStatus"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:createAssignmentwithAssignedLabor",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwosrvad/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwosrvad",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:createAssignmentwithAssignedLabor"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:createChange",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwosrvad/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwosrvad",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:createChange"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:createFollowUp",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwosrvad/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwosrvad",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:createFollowUp"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:createJPFromWO",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwosrvad/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwosrvad",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:createJPFromWO"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:createProblem",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwosrvad/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwosrvad",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:createProblem"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:downtimereport",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwosrvad/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwosrvad",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:downtimereport"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:generateWORelRecord",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwosrvad/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwosrvad",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:generateWORelRecord"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:ownership",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwosrvad/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwosrvad",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:ownership"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:removeSafetyPlan",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwosrvad/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwosrvad",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:removeSafetyPlan"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:removeWorkPlan",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwosrvad/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwosrvad",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:removeWorkPlan"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:reportDowntime",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwosrvad/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwosrvad",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:reportDowntime"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:startTimer",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwosrvad/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwosrvad",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:startTimer"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:startTimerStartDate",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwosrvad/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwosrvad",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:startTimerStartDate"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:stopTimer",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwosrvad/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwosrvad",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:stopTimer"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "POST wsmethod:stopTimerStartFinishDates",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/oslc/os/mxapiwosrvad/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "oslc",
+                    "os",
+                    "mxapiwosrvad",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "wsmethod:stopTimerStartFinishDates"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

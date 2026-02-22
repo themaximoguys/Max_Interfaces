@@ -1,0 +1,215 @@
+{
+  "info": {
+    "name": "Maximo OSLC - Analytics (ANALYTICS)",
+    "description": "Maximo Analytics (ANALYTICS) - your Maximo instance.\n5 endpoints from OAS3 spec.\nUse 'Your Environment' environment.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apikey",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apikey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://your-instance.maximo.com/maximo"
+    }
+  ],
+  "item": [
+    {
+      "name": "mxapianalyticdataset",
+      "item": [
+        {
+          "name": "Get mxapianalyticdataset by ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapianalyticdataset/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapianalyticdataset",
+                ":id"
+              ],
+              "query": [
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a MXAPIANALYTICDATASET"
+          }
+        },
+        {
+          "name": "List mxapianalyticdataset",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapianalyticdataset",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapianalyticdataset"
+              ],
+              "query": [
+                {
+                  "key": "oslc.select",
+                  "value": "*"
+                },
+                {
+                  "key": "oslc.where",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "oslc.pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "oslc.orderBy",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "lean",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Get a (paged) collection of MXAPIANALYTICDATASET"
+          }
+        },
+        {
+          "name": "Create mxapianalyticdataset",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapianalyticdataset",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapianalyticdataset"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new MXAPIANALYTICDATASET"
+          }
+        },
+        {
+          "name": "Update mxapianalyticdataset",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-method-override",
+                "value": "PATCH"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapianalyticdataset/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapianalyticdataset",
+                ":id"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update MXAPIANALYTICDATASET with id {id}"
+          }
+        },
+        {
+          "name": "Delete mxapianalyticdataset",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/oslc/os/mxapianalyticdataset/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "oslc",
+                "os",
+                "mxapianalyticdataset",
+                ":id"
+              ]
+            },
+            "description": "Delete MXAPIANALYTICDATASET for id {id}"
+          }
+        }
+      ]
+    }
+  ]
+}

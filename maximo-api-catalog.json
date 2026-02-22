@@ -1,0 +1,193 @@
+{
+  "metadata": {
+    "source": "https://your-instance.maximo.com/maximo/maximomodules.jsp",
+    "discoveredDate": "2026-02-14",
+    "totalModules": 18,
+    "totalEndpoints": 36,
+    "baseUrl": "https://your-instance.maximo.com/maximo"
+  },
+  "modules": {
+    "ANALYTICS": {
+      "name": "ANALYTICS",
+      "description": "Analytics",
+      "primaryAPIs": "oas3/api.html?module=ANALYTICS&includeactions=1&primary=1",
+      "allAPIs": "oas3/api.html?module=ANALYTICS&includeactions=1",
+      "fullUrl": "https://your-instance.maximo.com/maximo/oas3/api.html?module=ANALYTICS&includeactions=1",
+      "mcpCoverage": "NOT_IMPLEMENTED"
+    },
+    "ASSET": {
+      "name": "ASSET",
+      "description": "Assets",
+      "primaryAPIs": "oas3/api.html?module=ASSET&includeactions=1&primary=1",
+      "allAPIs": "oas3/api.html?module=ASSET&includeactions=1",
+      "fullUrl": "https://your-instance.maximo.com/maximo/oas3/api.html?module=ASSET&includeactions=1",
+      "mcpCoverage": "PARTIAL",
+      "mcpModule": "assets"
+    },
+    "CI": {
+      "name": "CI",
+      "description": "IT Infrastructure",
+      "primaryAPIs": "oas3/api.html?module=CI&includeactions=1&primary=1",
+      "allAPIs": "oas3/api.html?module=CI&includeactions=1",
+      "fullUrl": "https://your-instance.maximo.com/maximo/oas3/api.html?module=CI&includeactions=1",
+      "mcpCoverage": "NOT_IMPLEMENTED"
+    },
+    "COMPANY": {
+      "name": "COMPANY",
+      "description": "Company Management",
+      "primaryAPIs": "oas3/api.html?module=COMPANY&includeactions=1&primary=1",
+      "allAPIs": "oas3/api.html?module=COMPANY&includeactions=1",
+      "fullUrl": "https://your-instance.maximo.com/maximo/oas3/api.html?module=COMPANY&includeactions=1",
+      "mcpCoverage": "NOT_IMPLEMENTED"
+    },
+    "CONFIGUR": {
+      "name": "CONFIGUR",
+      "description": "Configuration Management",
+      "primaryAPIs": "oas3/api.html?module=CONFIGUR&includeactions=1&primary=1",
+      "allAPIs": "oas3/api.html?module=CONFIGUR&includeactions=1",
+      "fullUrl": "https://your-instance.maximo.com/maximo/oas3/api.html?module=CONFIGUR&includeactions=1",
+      "mcpCoverage": "NOT_IMPLEMENTED"
+    },
+    "CONTRACT": {
+      "name": "CONTRACT",
+      "description": "Contracts",
+      "primaryAPIs": "oas3/api.html?module=CONTRACT&includeactions=1&primary=1",
+      "allAPIs": "oas3/api.html?module=CONTRACT&includeactions=1",
+      "fullUrl": "https://your-instance.maximo.com/maximo/oas3/api.html?module=CONTRACT&includeactions=1",
+      "mcpCoverage": "NOT_IMPLEMENTED"
+    },
+    "FINANCIAL": {
+      "name": "FINANCIAL",
+      "description": "Financial",
+      "primaryAPIs": "oas3/api.html?module=FINANCIAL&includeactions=1&primary=1",
+      "allAPIs": "oas3/api.html?module=FINANCIAL&includeactions=1",
+      "fullUrl": "https://your-instance.maximo.com/maximo/oas3/api.html?module=FINANCIAL&includeactions=1",
+      "mcpCoverage": "NOT_IMPLEMENTED"
+    },
+    "INT": {
+      "name": "INT",
+      "description": "Integration",
+      "primaryAPIs": "oas3/api.html?module=INT&includeactions=1&primary=1",
+      "allAPIs": "oas3/api.html?module=INT&includeactions=1",
+      "fullUrl": "https://your-instance.maximo.com/maximo/oas3/api.html?module=INT&includeactions=1",
+      "mcpCoverage": "NOT_IMPLEMENTED"
+    },
+    "INVENTOR": {
+      "name": "INVENTOR",
+      "description": "Inventory Management",
+      "primaryAPIs": "oas3/api.html?module=INVENTOR&includeactions=1&primary=1",
+      "allAPIs": "oas3/api.html?module=INVENTOR&includeactions=1",
+      "fullUrl": "https://your-instance.maximo.com/maximo/oas3/api.html?module=INVENTOR&includeactions=1",
+      "mcpCoverage": "PARTIAL",
+      "mcpModule": "inventory"
+    },
+    "PLANS": {
+      "name": "PLANS",
+      "description": "Job Plans",
+      "primaryAPIs": "oas3/api.html?module=PLANS&includeactions=1&primary=1",
+      "allAPIs": "oas3/api.html?module=PLANS&includeactions=1",
+      "fullUrl": "https://your-instance.maximo.com/maximo/oas3/api.html?module=PLANS&includeactions=1",
+      "mcpCoverage": "NOT_IMPLEMENTED"
+    },
+    "PM": {
+      "name": "PM",
+      "description": "Preventive Maintenance",
+      "primaryAPIs": "oas3/api.html?module=PM&includeactions=1&primary=1",
+      "allAPIs": "oas3/api.html?module=PM&includeactions=1",
+      "fullUrl": "https://your-instance.maximo.com/maximo/oas3/api.html?module=PM&includeactions=1",
+      "mcpCoverage": "PARTIAL",
+      "mcpModule": "preventive-maintenance"
+    },
+    "PURCHASE": {
+      "name": "PURCHASE",
+      "description": "Purchasing",
+      "primaryAPIs": "oas3/api.html?module=PURCHASE&includeactions=1&primary=1",
+      "allAPIs": "oas3/api.html?module=PURCHASE&includeactions=1",
+      "fullUrl": "https://your-instance.maximo.com/maximo/oas3/api.html?module=PURCHASE&includeactions=1",
+      "mcpCoverage": "PARTIAL",
+      "mcpModule": "purchase-orders"
+    },
+    "SCHEDULER": {
+      "name": "SCHEDULER",
+      "description": "Scheduler",
+      "primaryAPIs": "oas3/api.html?module=SCHEDULER&includeactions=1&primary=1",
+      "allAPIs": "oas3/api.html?module=SCHEDULER&includeactions=1",
+      "fullUrl": "https://your-instance.maximo.com/maximo/oas3/api.html?module=SCHEDULER&includeactions=1",
+      "mcpCoverage": "NOT_IMPLEMENTED"
+    },
+    "SD": {
+      "name": "SD",
+      "description": "Service Desk",
+      "primaryAPIs": "oas3/api.html?module=SD&includeactions=1&primary=1",
+      "allAPIs": "oas3/api.html?module=SD&includeactions=1",
+      "fullUrl": "https://your-instance.maximo.com/maximo/oas3/api.html?module=SD&includeactions=1",
+      "mcpCoverage": "PARTIAL",
+      "mcpModule": "service-requests"
+    },
+    "SECURITY": {
+      "name": "SECURITY",
+      "description": "Security",
+      "primaryAPIs": "oas3/api.html?module=SECURITY&includeactions=1&primary=1",
+      "allAPIs": "oas3/api.html?module=SECURITY&includeactions=1",
+      "fullUrl": "https://your-instance.maximo.com/maximo/oas3/api.html?module=SECURITY&includeactions=1",
+      "mcpCoverage": "NOT_IMPLEMENTED"
+    },
+    "SETUP": {
+      "name": "SETUP",
+      "description": "Setup and Configuration",
+      "primaryAPIs": "oas3/api.html?module=SETUP&includeactions=1&primary=1",
+      "allAPIs": "oas3/api.html?module=SETUP&includeactions=1",
+      "fullUrl": "https://your-instance.maximo.com/maximo/oas3/api.html?module=SETUP&includeactions=1",
+      "mcpCoverage": "NOT_IMPLEMENTED"
+    },
+    "UTIL": {
+      "name": "UTIL",
+      "description": "Utilities",
+      "primaryAPIs": "oas3/api.html?module=UTIL&includeactions=1&primary=1",
+      "allAPIs": "oas3/api.html?module=UTIL&includeactions=1",
+      "fullUrl": "https://your-instance.maximo.com/maximo/oas3/api.html?module=UTIL&includeactions=1",
+      "mcpCoverage": "PARTIAL",
+      "mcpModule": "persons-labor"
+    },
+    "WO": {
+      "name": "WO",
+      "description": "Work Orders",
+      "primaryAPIs": "oas3/api.html?module=WO&includeactions=1&primary=1",
+      "allAPIs": "oas3/api.html?module=WO&includeactions=1",
+      "fullUrl": "https://your-instance.maximo.com/maximo/oas3/api.html?module=WO&includeactions=1",
+      "mcpCoverage": "PARTIAL",
+      "mcpModule": "work-orders"
+    }
+  },
+  "existingMCPModules": [
+    "work-orders",
+    "assets",
+    "inventory",
+    "service-requests",
+    "locations",
+    "purchase-orders",
+    "preventive-maintenance",
+    "persons-labor",
+    "attachments",
+    "classifications",
+    "query-search",
+    "bulk-operations",
+    "dev-tools"
+  ],
+  "coverageAnalysis": {
+    "totalMaximoModules": 18,
+    "fullyImplemented": 0,
+    "partiallyImplemented": 7,
+    "notImplemented": 11,
+    "coveragePercentage": 38.9,
+    "priorityGaps": [
+      "ANALYTICS - Business intelligence and reporting",
+      "CI - IT Infrastructure management",
+      "CONTRACT - Contract lifecycle management",
+      "FINANCIAL - Financial management",
+      "PLANS - Job plan management",
+      "SCHEDULER - Work scheduling",
+      "SECURITY - User and security management"
+    ]
+  }
+}
