@@ -1,6 +1,6 @@
 <div align="center">
 
-# IBM Maximo 7.x, 8.x, MAS 9.x — API Collections
+# IBM Maximo 7.x, 8.x, MAS 9.x — API Collections & Automation Scripts
 
 ### The most comprehensive Postman collection suite for IBM Maximo Application Suite APIs
 
@@ -8,12 +8,13 @@
 [![Postman](https://img.shields.io/badge/Postman-v2.1-FF6C37?logo=postman&logoColor=white)](https://www.postman.com/)
 [![OpenAPI](https://img.shields.io/badge/OpenAPI-3.0-6BA539?logo=openapi-initiative&logoColor=white)](https://swagger.io/specification/)
 [![Maximo Version](https://img.shields.io/badge/Maximo-7.x%20|%208.x%20|%20MAS%209.x-054ADA?logo=ibm&logoColor=white)](https://www.ibm.com/products/maximo)
-[![Endpoints](https://img.shields.io/badge/Endpoints-1%2C308-brightgreen)]()
+[![Endpoints](https://img.shields.io/badge/Endpoints-2%2C439+-brightgreen)]()
+[![Scripts](https://img.shields.io/badge/Automation%20Scripts-29-blue)]()
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
-**1,308 endpoints** across **14 modules** — Work Orders, Assets, Inventory, Service Desk, Purchasing, Utilities, Preventive Maintenance, Job Plans, Financial, Contracts, IT Infrastructure, Company, Analytics, and Scheduling.
+**2,439+ endpoints** across **14 modules** + **29 production-ready automation scripts** with a fully automated deployment pipeline.
 
-[Quick Start](#-quick-start) · [API Patterns](#-api-patterns) · [Module Coverage](#-module-coverage) · [Contributing](#-contributing)
+[Quick Start](#-quick-start) · [Automation Scripts](#-automation-scripts) · [Deployment](#-deployment) · [API Patterns](#-api-patterns) · [Contributing](#-contributing)
 
 </div>
 
@@ -21,54 +22,40 @@
 
 ## Table of Contents
 
-- [Overview](#-overview)
+- [Overview](#overview)
 - [Quick Start](#-quick-start)
-  - [Import Collections](#1-import-collections-into-postman)
-  - [Set Up Environment](#2-set-up-environment)
-  - [Make Your First Request](#3-make-your-first-request)
+- [Collection Generations](#collection-generations)
+- [Automation Scripts](#-automation-scripts)
+- [Deployment](#-deployment)
 - [API Patterns](#-api-patterns)
-  - [OSLC API](#oslc-api-oslcos)
-  - [REST API](#rest-api-apios)
-  - [Common Query Parameters](#common-query-parameters)
-  - [Example Requests](#example-requests)
 - [Module Coverage](#-module-coverage)
-  - [Tier 1 — Core Operations](#tier-1--core-operations)
-  - [Tier 2 — Extended Operations](#tier-2--extended-operations)
-  - [Tier 3 — Administrative & Financial](#tier-3--administrative--financial)
 - [Authentication](#-authentication)
 - [Project Structure](#-project-structure)
+- [API Behavior Notes](#-api-behavior-notes)
 - [Troubleshooting](#-troubleshooting)
 - [FAQ](#-faq)
 - [Security](#-security)
 - [Contributing](#-contributing)
 - [License](#-license)
-- [Acknowledgments](#-acknowledgments)
 
 ---
 
 ## Overview
 
-Production-ready Postman collections for IBM Maximo Application Suite (MAS) APIs, auto-generated from OpenAPI 3.0 specifications. Covers both the legacy **OSLC** and modern **NextGen REST** API patterns.
-
-### Why This Project?
-
-- **Complete Coverage** — 14 modules with every discoverable endpoint from the OAS3 specs
-- **Dual API Patterns** — Both OSLC (`/oslc/os/`) and REST (`/api/os/`) collections for the same resources
-- **Ready to Use** — Import into Postman and start making requests in under 2 minutes
-- **Enterprise Tested** — Every endpoint verified against a live MAS 9.x instance
-- **Community Driven** — Open source with clear contribution guidelines
+Production-ready Postman collections and automation scripts for IBM Maximo Application Suite (MAS) APIs. Covers both the legacy **OSLC** and modern **NextGen REST** API patterns, plus a library of 29 Jython automation scripts deployable via API.
 
 ### Key Metrics
 
 | Metric | Value |
 |--------|-------|
+| **Collection Generations** | 2 (Original + MAS 9) |
 | **Total Modules** | 14 (of 18 discovered) |
-| **OSLC Endpoints** | 738 |
-| **REST Endpoints** | 570 |
-| **Total Endpoints** | 1,308 |
-| **Target Instance** | Any MAS 9.x instance |
-| **Collection Format** | Postman v2.1.0 |
-| **Source Format** | OpenAPI 3.0 (OAS3) |
+| **Original OSLC Endpoints** | 738 |
+| **Original REST Endpoints** | 570 |
+| **MAS 9 OSLC Requests** | ~1,011 |
+| **MAS 9 REST Requests** | ~1,131 |
+| **Automation Scripts** | 29 (12 object, 9 field, 4 action, 3 cron, 1 integration) |
+| **Deployment Requests** | 120 (deploy + verify + update + rollback + cron setup) |
 
 ---
 
@@ -76,21 +63,19 @@ Production-ready Postman collections for IBM Maximo Application Suite (MAS) APIs
 
 ### Prerequisites
 
-- [Postman](https://www.postman.com/) desktop or web app
+- [Postman](https://www.postman.com/) desktop or web app (or [Newman](https://www.npmjs.com/package/newman) for CLI)
 - IBM Maximo MAS 9.x instance with API access enabled
 - API key with appropriate permissions
 
 ### 1. Import Collections into Postman
 
 ```bash
-# Import all OSLC collections
-File > Import > Select all files from postman-oslc/
+# For MAS 9 collections (recommended)
+File > Import > Select all files from postman-mas9-oslc/ or postman-mas9-rest/
 
-# Import all REST collections
-File > Import > Select all files from postman-rest/
+# For original 7.x/8.x collections
+File > Import > Select all files from postman-oslc/ or postman-rest/
 ```
-
-> You can import individual module files or all 14 at once. Each collection is self-contained.
 
 ### 2. Set Up Environment
 
@@ -103,23 +88,174 @@ Create a Postman environment with these variables:
 
 ### 3. Make Your First Request
 
-Select any collection, choose a **"List"** request, and hit **Send**. All collections inherit the `apikey` header authentication and `{{baseUrl}}` variable automatically.
-
 ```
-GET {{baseUrl}}/oslc/os/mxapiwodetail?oslc.select=wonum,description,status&oslc.pageSize=5&lean=1
+GET {{baseUrl}}/api/os/mxapiwodetail?oslc.select=wonum,description,status&oslc.pageSize=5&lean=1
 ```
 
-You should receive a `200 OK` response with a `member` array containing Maximo records.
+---
+
+## Collection Generations
+
+This project contains **two generations** of Postman collections:
+
+| Generation | Directories | Target | Modules | Notes |
+|-----------|-------------|--------|---------|-------|
+| **Original** | `postman-oslc/`, `postman-rest/` | Maximo 7.x / 8.x | 14 | Auto-generated from OAS3 specs |
+| **MAS 9** | `postman-mas9-oslc/`, `postman-mas9-rest/` | MAS 9.x | 13 + deployment | Enhanced with admin, setup, and script deployment |
+
+### MAS 9 Collections
+
+The MAS 9 collections include significantly more requests per module and add new capabilities:
+
+| Collection | Requests | Description |
+|-----------|----------|-------------|
+| `ADMIN.json` | 38 | Script execution, CI/CD deployment lifecycle |
+| `SETUP.json` | 195 | Full administration (domains, scripts, cron, actions) |
+| `WO.json` | 165 | Work Orders with 38+ action calls |
+| `ASSET.json` | 196 | Asset management |
+| `INVENTOR.json` | 81 | Inventory management |
+| `PURCHASE.json` | 84 | Purchase orders and requests |
+| `SD.json` | 50 | Service Desk |
+| `UTIL.json` | 110 | System configuration and utilities |
+| `PLANS.json` | 19 | Job Plans |
+| `PM.json` | 19 | Preventive Maintenance |
+| `CONTRACT.json` | 18 | Contracts |
+| `FINANCIAL.json` | 18 | Financial |
+| `INT.json` | 18 | Integration |
+| `autoscripts.json` | 120 | Unified deployment pipeline (REST only) |
+
+---
+
+## Automation Scripts
+
+### Demo Script Library (29 Scripts)
+
+A production-grade library of Jython automation scripts organized by type:
+
+#### Object Scripts (12)
+
+| Script | Object | Event | Description |
+|--------|--------|-------|-------------|
+| `workorder.obj.save.before` | WORKORDER | Before Save | Auto-populate priority/dates for CM/EM work types |
+| `workorder.obj.statuschange.before` | WORKORDER | Before Save | 6-state transition matrix, child WO checks, labor/material validation |
+| `workorder.obj.statuschange.after` | WORKORDER | After Save | KPI calculation (response time, wrench time, schedule compliance) |
+| `asset.obj.save.before` | ASSET | Before Save | Install date validation, depreciation, parent location sync |
+| `locations.obj.init` | LOCATIONS | Initialize | Hierarchy path generation, ORGID/SITEID defaulting |
+| `pm.obj.save.before` | PM | Before Save | Frequency/job plan validation, NEXTDATE calculation |
+| `po.obj.save.before` | PO | Before Save | Total cost calculation, vendor validation |
+| `po.obj.statuschange.before` | PO | Before Save | 3-way match (PO/receipt/invoice), budget reservation |
+| `po.obj.statuschange.after` | PO | After Save | PR linkage sync, vendor performance scorecard |
+| `pr.obj.save.before` | PR | Before Save | Required date auto-set, sourcing validation |
+| `pr.obj.statuschange.before` | PR | Before Save | 4-tier approval authority engine |
+| `pr.obj.statuschange.after` | PR | After Save | Auto PO generation, budget commit/release |
+
+#### Field Validators (9)
+
+| Script | Object | Attribute | Description |
+|--------|--------|-----------|-------------|
+| `workorder.fld.status.validate` | WORKORDER | STATUS | Block COMP/CLOSE/APPR based on child WOs |
+| `workorder.fld.status.action` | WORKORDER | STATUS | Dynamic READONLY/REQUIRED on 20+ fields per status |
+| `asset.fld.serialnum.validate` | ASSET | SERIALNUM | Regex format validation, uniqueness check |
+| `locations.fld.streetaddress.validate` | LOCATIONS | STREETADDRESS | Required address for COURIER/STOREROOM types |
+| `pm.fld.frequency.validate` | PM | FREQUENCY | Range validation per FREQUNIT |
+| `po.fld.totalcost.validate` | PO | TOTALCOST | Non-negative check, vendor credit limit |
+| `po.fld.status.action` | PO | STATUS | Field group locking, budget impact preview |
+| `pr.fld.requireddate.validate` | PR | REQUIREDDATE | Past/future date limits, priority-based lead times |
+| `pr.fld.status.action` | PR | STATUS | Editability matrix, approval summary |
+
+#### Action Scripts (4)
+
+| Script | Object | Description |
+|--------|--------|-------------|
+| `workorder.action.notify` | WORKORDER | Email supervisor with WO details |
+| `workorder.action.escalation` | WORKORDER | Tiered escalation (email, priority bump, manager notify) |
+| `asset.action.downtime` | ASSET | Calculate/record downtime hours, create meter readings |
+| `pr.action.autoapprove` | PR | Auto-approve PRs under threshold with segregation of duties |
+
+#### Cron Tasks (3)
+
+| Script | Schedule | Description |
+|--------|----------|-------------|
+| `cron.wo.autoclose` | Daily | Auto-close completed WOs after configurable days |
+| `cron.pm.generate.wo` | Daily | Generate WOs from active PMs with job plan resources |
+| `cron.inv.reorder` | Daily | Check stock levels, auto-create PRs grouped by vendor |
+
+#### Integration Scripts (1)
+
+| Script | Direction | Description |
+|--------|-----------|-------------|
+| `publish.mxpo.extexit.out` | Outbound | MXPO ERP integration with field mapping and retry |
+
+---
+
+## Deployment
+
+### Automated Deployment with Newman
+
+The `autoscripts.json` collection provides a complete CI/CD pipeline for deploying all 29 scripts via API.
+
+#### Install Newman
+
+```bash
+npm install -g newman
+```
+
+#### Deploy All Scripts
+
+```bash
+# Step 1: Deploy scripts and launch points
+newman run postman-mas9-rest/autoscripts.json \
+  -e your-environment.json \
+  --folder "1. Deploy All Scripts"
+
+# Step 2: Set up cron task definitions
+newman run postman-mas9-rest/autoscripts.json \
+  -e your-environment.json \
+  --folder "5. Cron Task Setup"
+```
+
+#### Other Operations
+
+```bash
+# Verify all scripts exist
+newman run postman-mas9-rest/autoscripts.json \
+  -e your-environment.json \
+  --folder "2. Verify All"
+
+# Update source code on existing scripts
+newman run postman-mas9-rest/autoscripts.json \
+  -e your-environment.json \
+  --folder "3. Update Source Code"
+
+# Rollback (delete all scripts)
+newman run postman-mas9-rest/autoscripts.json \
+  -e your-environment.json \
+  --folder "4. Rollback (Delete)"
+```
+
+### Deployment Pipeline Folders
+
+| Folder | Requests | Description |
+|--------|----------|-------------|
+| 1. Deploy All Scripts | 29 | Creates script + launch point(s) in one API call |
+| 2. Verify All | 29 | Confirms each script exists with its launch point |
+| 3. Update Source Code | 29 | Push source changes to existing scripts |
+| 4. Rollback (Delete) | 29 | Delete scripts and their launch points |
+| 5. Cron Task Setup | 3 | Create cron task definitions |
+
+### Post-Deployment: Launch Point Fix
+
+The Maximo REST API has a known limitation where `objectevent` values are recomputed from boolean flags, preventing direct setting of After Save (objectevent=7) timing. After deploying, a utility script (`UTIL.FIX.LAUNCHPOINT`) can be deployed and executed to fix this via direct SQL.
+
+See [API Behavior Notes](#-api-behavior-notes) for details.
 
 ---
 
 ## API Patterns
 
-Maximo exposes two API patterns for the same resources. Both are fully covered in this project.
+Maximo exposes two API patterns for the same resources. Both are fully covered.
 
 ### OSLC API (`/oslc/os/`)
-
-The original Maximo API pattern using OSLC (Open Services for Lifecycle Collaboration) standards.
 
 ```
 GET    /oslc/os/{resource}          # List (paginated)
@@ -127,27 +263,23 @@ GET    /oslc/os/{resource}/{id}     # Get by ID
 POST   /oslc/os/{resource}          # Create
 POST   /oslc/os/{resource}/{id}     # Update (x-method-override: PATCH)
 DELETE /oslc/os/{resource}/{id}     # Delete
+POST   /oslc/script/{scriptName}    # Execute automation script
 ```
 
-**Update note:** OSLC uses `POST` with `x-method-override: PATCH` header for updates. OSLC collections also include common framework actions (lock, unlock, bookmark, etc.) grouped into a **"Common OSLC Actions"** folder.
-
 ### REST API (`/api/os/`)
-
-The NextGen REST API pattern — same resources, standard REST conventions.
 
 ```
 GET    /api/os/{resource}           # List (paginated)
 GET    /api/os/{resource}/{id}      # Get by ID
 POST   /api/os/{resource}           # Create
-PATCH  /api/os/{resource}/{id}      # Update (native PATCH)
+PATCH  /api/os/{resource}/{id}      # Update (native PATCH — returns 501, use OSLC method)
 DELETE /api/os/{resource}/{id}      # Delete
+POST   /api/script/{scriptName}     # Execute automation script
 ```
 
-**Key difference:** REST collections use native `PATCH` for updates and do not include generic OSLC framework actions.
+> **Note:** Native `PATCH` returns `501 Not Implemented` on MAS 9. Use `POST` with `x-method-override: PATCH` and `patchtype: MERGE` headers instead.
 
 ### Common Query Parameters
-
-Both API patterns support the same query parameters:
 
 | Parameter | Example | Description |
 |-----------|---------|-------------|
@@ -158,60 +290,14 @@ Both API patterns support the same query parameters:
 | `lean` | `1` | Compact response (recommended) |
 | `collectioncount` | `1` | Include total record count |
 
-### Example Requests
-
-**List work orders (page of 5, key fields only):**
-
-```
-GET {{baseUrl}}/oslc/os/mxapiwodetail?oslc.select=wonum,description,status&oslc.pageSize=5&lean=1
-```
-
-**Get a specific asset:**
-
-```
-GET {{baseUrl}}/api/os/mxapiasset/12345?lean=1
-```
-
-**Filter purchase orders by status:**
-
-```
-GET {{baseUrl}}/oslc/os/mxapipo?oslc.where=status="APPR"&oslc.pageSize=10&lean=1
-```
-
-**Create a work order (POST body):**
-
-```json
-{
-  "description": "Repair centrifugal pump bearing failure",
-  "assetnum": "PUMP-001",
-  "location": "BR-300",
-  "worktype": "CM",
-  "priority": 2,
-  "siteid": "BEDFORD"
-}
-```
-
-**Update with OSLC (requires x-method-override header):**
-
-```
-POST {{baseUrl}}/oslc/os/mxapiwodetail/{id}
-Header: x-method-override: PATCH
-```
-
-**Update with REST (native PATCH):**
-
-```
-PATCH {{baseUrl}}/api/os/mxapiwodetail/{id}
-```
-
 ---
 
 ## Module Coverage
 
 ### Tier 1 — Core Operations
 
-| Module | Code | OSLC Endpoints | REST Endpoints | Primary Resource |
-|--------|------|:--------------:|:--------------:|------------------|
+| Module | Code | OSLC | REST | Primary Resource |
+|--------|------|:----:|:----:|------------------|
 | Work Orders | WO | 166 | 166 | `mxapiwodetail` |
 | Assets | ASSET | 118 | 118 | `mxapiasset` |
 | Inventory | INVENTOR | 60 | 60 | `mxapiinventory` |
@@ -219,8 +305,8 @@ PATCH {{baseUrl}}/api/os/mxapiwodetail/{id}
 
 ### Tier 2 — Extended Operations
 
-| Module | Code | OSLC Endpoints | REST Endpoints | Primary Resource |
-|--------|------|:--------------:|:--------------:|------------------|
+| Module | Code | OSLC | REST | Primary Resource |
+|--------|------|:----:|:----:|------------------|
 | Purchasing | PURCHASE | 45 | 45 | `mxapipo`, `mxapipr` |
 | Utilities | UTIL | 57 | 57 | `mxapiperson` |
 | Preventive Maintenance | PM | 6 | 6 | `mxapipm` |
@@ -228,25 +314,14 @@ PATCH {{baseUrl}}/api/os/mxapiwodetail/{id}
 
 ### Tier 3 — Administrative & Financial
 
-| Module | Code | OSLC Endpoints | REST Endpoints | Primary Resource |
-|--------|------|:--------------:|:--------------:|------------------|
+| Module | Code | OSLC | REST | Primary Resource |
+|--------|------|:----:|:----:|------------------|
 | Financial | FINANCIAL | 62 | 20 | `mxapicoa` |
 | Contracts | CONTRACT | 52 | 10 | `mxapicontract` |
 | IT Infrastructure | CI | 52 | 10 | `mxapiauthci` |
 | Company | COMPANY | 47 | 5 | `mxapicommodity` |
-| Analytics | ANALYTICS | 5 | 5 | `mxapikpigraphic`* |
+| Analytics | ANALYTICS | 5 | 5 | `mxapikpigraphic` |
 | Scheduler | SCHEDULER | 5 | 5 | `mxapilbslocation` |
-
-> \*ANALYTICS (`mxapikpigraphic`) may not be deployed on all instances. Returns 404 if the object structure is not configured.
-
-### Not Included (No API Endpoints)
-
-| Module | Reason |
-|--------|--------|
-| CONFIGUR | No endpoints in OAS3 spec |
-| INTEGRATION | No endpoints in OAS3 spec |
-| SAFETY | No endpoints in OAS3 spec |
-| SLA | No endpoints in OAS3 spec |
 
 ---
 
@@ -258,23 +333,11 @@ All collections use API key authentication via the `apikey` HTTP header:
 Header: apikey: <your-api-key>
 ```
 
-The API key is stored as the `{{apikey}}` Postman environment variable. Each collection inherits this authentication at the collection level — individual requests do not need separate auth configuration.
-
-### Authentication Modes
-
 | Mode | Header | Use Case |
 |------|--------|----------|
-| **API Key** (recommended) | `apikey: your-key` | Automation, CI/CD, MCP servers |
-| **Basic Auth** | `Authorization: Basic base64(user:pass)` | Development, manual testing |
-| **LTPA Token** | `Cookie: LtpaToken2=...` | Browser-based sessions |
-
-### Security Best Practices
-
-- **Never commit credentials** — Use Postman environment variables (type: secret)
-- **Use API keys over passwords** — API keys can be scoped and rotated independently
-- **HTTPS only** — All connections to Maximo should use TLS
-- **Principle of least privilege** — Use API keys with minimal required permissions
-- **Rotate regularly** — Implement key rotation policies
+| **API Key** (recommended) | `apikey: your-key` | Automation, CI/CD |
+| **Basic Auth** | `Authorization: Basic base64(user:pass)` | Development |
+| **LTPA Token** | `Cookie: LtpaToken2=...` | Browser sessions |
 
 ---
 
@@ -282,46 +345,71 @@ The API key is stored as the `{{apikey}}` Postman environment variable. Each col
 
 ```
 maximo-interfaces/
-├── README.md                        # This file
-├── CONTRIBUTING.md                  # Contribution guidelines
-├── LICENSE                          # MIT License
-├── .gitignore                       # Git ignore rules
-├── maximo-api-catalog.json          # Module catalog (18 modules)
+├── README.md
+├── CONTRIBUTING.md
+├── LICENSE
+├── .gitignore
+├── maximo-api-catalog.json              # 18-module API catalog
 │
-├── postman-oslc/                    # OSLC Postman collections (14 modules)
-│   ├── ANALYTICS.json
-│   ├── ASSET.json
-│   ├── CI.json
-│   ├── COMPANY.json
-│   ├── CONTRACT.json
-│   ├── FINANCIAL.json
-│   ├── INVENTOR.json
-│   ├── PLANS.json
-│   ├── PM.json
-│   ├── PURCHASE.json
-│   ├── SCHEDULER.json
-│   ├── SD.json
-│   ├── UTIL.json
-│   └── WO.json
+├── postman-oslc/                        # Original OSLC collections (14 modules)
+├── postman-rest/                        # Original REST collections (14 modules)
 │
-├── postman-rest/                    # REST Postman collections (14 modules)
-│   └── (same 14 module files)
+├── postman-mas9-oslc/                   # MAS 9 OSLC collections (13 modules)
+│   ├── ADMIN.json                       #   Script execution & CI/CD deployment
+│   ├── SETUP.json                       #   Full administration (195 requests)
+│   ├── WO.json                          #   Work Orders (165 requests)
+│   └── ...                              #   10 more module files
 │
-└── api-discovery/                   # Discovery artifacts (git-ignored)
-    ├── oas3/                        # OAS3 specs (git-ignored)
-    └── oas3-full/                   # Full OAS3 specs (git-ignored)
+├── postman-mas9-rest/                   # MAS 9 REST collections (13 + deployment)
+│   ├── autoscripts.json                 #   Unified deployment pipeline (120 requests)
+│   └── ...                              #   13 module files (same as OSLC)
+│
+├── autoscripts/                         # Automation scripts (git-ignored)
+│   └── demo-library/                    #   29-script demo library
+│       ├── object_scripts/              #     12 object event scripts
+│       ├── field_validators/            #     9 attribute validators
+│       ├── action_scripts/              #     4 action scripts
+│       ├── cron_tasks/                  #     3 scheduled cron scripts
+│       └── integration_scripts/         #     1 outbound integration
+│
+├── postman-mas9-environment/            # Postman environment (git-ignored)
+└── api-discovery/                       # OAS3 specs & discovery (git-ignored)
 ```
 
-### Collection File Format
+---
 
-Each collection file follows the [Postman Collection v2.1.0](https://schema.getpostman.com/json/collection/v2.1.0/collection.json) schema with:
+## API Behavior Notes
 
-- **Collection-level auth** — API Key header inherited by all requests
-- **`{{baseUrl}}` variable** — No hardcoded URLs
-- **Organized by resource** — Folders per object structure (e.g., `mxapiwodetail`, `mxapiasset`)
-- **Standard operations** — List, Get by ID, Create, Update, Delete per resource
-- **Actions folder** — Module-specific and common OSLC actions (wsmethod calls)
-- **Pre-configured query params** — `oslc.select`, `oslc.where`, `oslc.pageSize`, `lean` on all List endpoints
+### PATCH Returns 501
+
+MAS 9 REST API does not support native HTTP `PATCH`. Use `POST` with headers:
+```
+x-method-override: PATCH
+patchtype: MERGE
+```
+
+### Launch Point Event Codes
+
+The `mxapiautoscript` API uses `SCRIPTLAUNCHPOINT.OBJECTEVENT` (INTEGER) to control script timing:
+
+| objectevent | Meaning | How to Set via API |
+|:-----------:|---------|-------------------|
+| 0 | None | Default for ACTION/ATTRIBUTE types |
+| 1 | Initialize | `initialize: true` in launch point body |
+| 4 | Save (generic) | `update: true` only |
+| 6 | Before Save | `add: true` + `update: true` + `beforesave: true` |
+| 7 | After Save | **Cannot be set via API** — requires direct SQL |
+| 8 | After Commit | Set via `attributeevent: 1` (Run Action) |
+
+**Known limitation:** The `mxapiautoscript` Application Object Structure recomputes `objectevent` from boolean flags during MBO save. The `aftersave` and `runaction` boolean flags are silently ignored. Use numeric `attributeevent` for attribute launch points.
+
+### SCRIPTLAUNCHPOINT Column Names
+
+The `SCRIPTLAUNCHPOINT` table in SQL Server uses lowercase column names. `ADD` is a reserved word — use bracket syntax `[ADD]` in raw SQL queries.
+
+### Launch Point Name Length
+
+`SCRIPTLAUNCHPOINT.LAUNCHPOINTNAME` has a **30-character maximum**. Plan naming conventions accordingly.
 
 ---
 
@@ -329,41 +417,27 @@ Each collection file follows the [Postman Collection v2.1.0](https://schema.getp
 
 ### Connection Issues
 
-**Problem:** Requests timeout or return connection errors.
+- Verify `{{baseUrl}}` includes the full path: `https://your-instance.maximo.com/maximo`
+- Check network/VPN connectivity
+- Increase request timeout in Postman Settings
 
-**Solutions:**
-- Verify `{{baseUrl}}` includes the full path with protocol: `https://your-instance.maximo.com/maximo`
-- Check network/VPN connectivity to the Maximo server
-- Increase Postman's request timeout in Settings > General
+### Authentication Errors (401)
 
-### Authentication Errors
+- Verify API key is valid and not expired
+- Ensure the `apikey` header name matches your instance configuration
+- Confirm the Postman environment variable `{{apikey}}` is set
 
-**Problem:** `401 Unauthorized` responses.
+### OSLC Query Errors (400)
 
-**Solutions:**
-- Verify your API key is valid and not expired
-- Ensure the API key has permissions for the object structures you're accessing
-- Check that the `apikey` header name matches your Maximo configuration (some instances use `maxauth`)
-- Confirm the environment variable `{{apikey}}` is set and the correct environment is selected
+- Enclose string values in double quotes: `status="WAPPR"`
+- Check OSLC `where` clause syntax
+- Test with a simple query first
 
-### OSLC Query Errors
+### Script Deployment Errors (400)
 
-**Problem:** `400 Bad Request` on list endpoints with filters.
-
-**Solutions:**
-- Enclose string values in double quotes: `status="WAPPR"` not `status=WAPPR`
-- Use valid field names for the object structure
-- Check OSLC `where` clause syntax — Maximo uses its own dialect
-- Test with a simple query first: `oslc.where=status="APPR"`
-
-### Module Not Found (404)
-
-**Problem:** A module returns 404 for all endpoints.
-
-**Solutions:**
-- The object structure may not be deployed on your instance
-- Check with your Maximo admin that the API object structures are configured
-- ANALYTICS (`mxapikpigraphic`) is known to return 404 on instances without KPI graphics deployed
+- **Duplicate script name** — Script already exists. Use the Update folder instead.
+- **Launch point name too long** — Max 30 characters. Shorten the name.
+- **Invalid attribute** — The attribute doesn't exist on the target object in your instance.
 
 ---
 
@@ -372,43 +446,29 @@ Each collection file follows the [Postman Collection v2.1.0](https://schema.getp
 <details>
 <summary><strong>Which Maximo versions are supported?</strong></summary>
 
-These collections are built for **IBM Maximo Application Suite (MAS) 9.x** and its OSLC-based REST API. They may work with Maximo 7.6.1.x instances that have the REST API enabled, but this is not officially tested.
+These collections target **IBM MAS 9.x**. The original collections (`postman-oslc/`, `postman-rest/`) may work with Maximo 7.6.1.x instances with REST API enabled.
 </details>
 
 <details>
 <summary><strong>What's the difference between OSLC and REST collections?</strong></summary>
 
-Both patterns access the **same data and object structures**. The differences are:
-- **URL pattern:** OSLC uses `/oslc/os/`, REST uses `/api/os/`
-- **Updates:** OSLC uses `POST` with `x-method-override: PATCH`, REST uses native `PATCH`
-- **Actions:** OSLC collections include generic framework actions (lock, unlock, bookmark). REST collections only include resource-specific operations.
-- **Endpoint count:** OSLC has 738 endpoints (including framework actions), REST has 570 endpoints.
-
-Choose REST if you prefer standard HTTP methods. Choose OSLC if you need the full action set.
+Both access the same data. OSLC uses `/oslc/os/` paths with `POST` + `x-method-override` for updates. REST uses `/api/os/` paths. Note: native `PATCH` returns 501 on MAS 9, so both patterns effectively use the same update mechanism.
 </details>
 
 <details>
-<summary><strong>Can I use these with automation tools (Newman, CI/CD)?</strong></summary>
+<summary><strong>Can I use Newman for CI/CD deployment?</strong></summary>
 
-Yes. All collections are standard Postman v2.1.0 JSON files. You can:
-- Run them with [Newman](https://www.npmjs.com/package/newman) (Postman's CLI runner)
-- Import them into CI/CD pipelines
-- Use them with any tool that supports the Postman collection format
+Yes. The `autoscripts.json` collection is designed for Newman-based deployment:
+```bash
+npm install -g newman
+newman run postman-mas9-rest/autoscripts.json -e your-env.json --folder "1. Deploy All Scripts"
+```
 </details>
 
 <details>
-<summary><strong>Why are some modules missing (CONFIGUR, INTEGRATION, SAFETY, SLA)?</strong></summary>
+<summary><strong>Why can't I set After Save (objectevent=7) via the API?</strong></summary>
 
-These modules were discovered in the Maximo module registry (`maximomodules.jsp`) but their OAS3 specifications contain zero API endpoints. They may use internal-only interfaces or require additional configuration to expose APIs.
-</details>
-
-<details>
-<summary><strong>How do I add a custom object structure?</strong></summary>
-
-If your Maximo instance has custom object structures (e.g., `mxapicustom`), you can:
-1. Fetch the OAS3 spec for the module containing the custom object
-2. Generate a new collection following the patterns in [CONTRIBUTING.md](CONTRIBUTING.md)
-3. Submit a PR if the object structure is standard across MAS instances
+The `mxapiautoscript` Application Object Structure recomputes `objectevent` from boolean flags during save, overriding any explicit value. After Save requires direct SQL via a utility script. See [API Behavior Notes](#-api-behavior-notes).
 </details>
 
 ---
@@ -419,31 +479,20 @@ If your Maximo instance has custom object structures (e.g., `mxapicustom`), you 
 
 - **Never commit API keys or passwords** to version control
 - All collections use `{{apikey}}` environment variable — no hardcoded credentials
-- The `.gitignore` excludes `.env`, `credentials.json`, `config.json`, and `.mcp.json`
-- OAS3 spec files are git-ignored as they may contain instance-specific information
+- The `.gitignore` excludes environment files, credentials, discovery artifacts, and automation scripts
+- OAS3 specs are git-ignored as they contain instance-specific information
 
 ### Reporting Vulnerabilities
 
-If you discover a security issue with these collections:
-
 1. **Do not** open a public GitHub issue
 2. Open a private security advisory on the repository
-3. Include details about the issue and any affected files
-4. We will acknowledge receipt within 48 hours
+3. We will acknowledge receipt within 48 hours
 
 ---
 
 ## Contributing
 
-We welcome contributions from the Maximo community. See [CONTRIBUTING.md](CONTRIBUTING.md) for full guidelines including:
-
-- Adding new modules
-- Updating existing collections
-- Collection naming conventions and standards
-- Testing requirements
-- Pull request checklist
-
-### Quick Contribution Guide
+See [CONTRIBUTING.md](CONTRIBUTING.md) for full guidelines.
 
 1. **Fork** the repository
 2. **Create a branch:** `git checkout -b add-module-CODE`
@@ -459,19 +508,10 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 ---
 
-## Acknowledgments
-
-- **IBM** — for the Maximo Application Suite and its comprehensive REST API
-- **Postman** — for the collection format and API development platform
-- **OpenAPI Initiative** — for the OAS3 specification standard
-- All **contributors** who help improve and maintain these collections
-
----
-
 <div align="center">
 
-**[Back to Top](#ibm-maximo-mas-9x--api-discovery--postman-collections)**
+**[Back to Top](#ibm-maximo-7x-8x-mas-9x--api-collections--automation-scripts)**
 
-Built for the Maximo community — empowering developers with ready-to-use API collections for every module.
+Built for the Maximo community — API collections, automation scripts, and deployment pipelines.
 
 </div>
