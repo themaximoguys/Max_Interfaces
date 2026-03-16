@@ -1,6 +1,6 @@
 <div align="center">
 
-# IBM Maximo 7.x, 8.x, MAS 9.x — API Collections & Automation Scripts
+# IBM Maximo 7.x, 8.x, MAS 9.x — API Collections
 
 ### The most comprehensive Postman collection suite for IBM Maximo Application Suite APIs
 
