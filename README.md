@@ -9,12 +9,11 @@
 [![OpenAPI](https://img.shields.io/badge/OpenAPI-3.0-6BA539?logo=openapi-initiative&logoColor=white)](https://swagger.io/specification/)
 [![Maximo Version](https://img.shields.io/badge/Maximo-7.x%20|%208.x%20|%20MAS%209.x-054ADA?logo=ibm&logoColor=white)](https://www.ibm.com/products/maximo)
 [![Endpoints](https://img.shields.io/badge/Endpoints-2%2C439+-brightgreen)]()
-[![Scripts](https://img.shields.io/badge/Automation%20Scripts-29-blue)]()
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
-**2,439+ endpoints** across **14 modules** + **29 production-ready automation scripts** with a fully automated deployment pipeline.
+**2,439+ endpoints** across **14 modules** with complete OSLC and REST API coverage.
 
-[Quick Start](#-quick-start) · [Automation Scripts](#-automation-scripts) · [Deployment](#-deployment) · [API Patterns](#-api-patterns) · [Contributing](#-contributing)
+[Quick Start](#-quick-start) · [Deployment](#-deployment) · [API Patterns](#-api-patterns) · [Contributing](#-contributing)
 
 </div>
 
@@ -25,9 +24,8 @@
 - [Overview](#overview)
 - [Quick Start](#-quick-start)
 - [Collection Generations](#collection-generations)
-- [Automation Scripts](#-automation-scripts)
-- [Deployment](#-deployment)
 - [API Patterns](#-api-patterns)
+- [Deployment](#-deployment)
 - [Module Coverage](#-module-coverage)
 - [Authentication](#-authentication)
 - [Project Structure](#-project-structure)
@@ -42,7 +40,7 @@
 
 ## Overview
 
-Production-ready Postman collections and automation scripts for IBM Maximo Application Suite (MAS) APIs. Covers both the legacy **OSLC** and modern **NextGen REST** API patterns, plus a library of 29 Jython automation scripts deployable via API.
+Production-ready Postman collections for IBM Maximo Application Suite (MAS) APIs. Covers both the legacy **OSLC** and modern **NextGen REST** API patterns.
 
 ### Key Metrics
 
@@ -54,8 +52,6 @@ Production-ready Postman collections and automation scripts for IBM Maximo Appli
 | **Original REST Endpoints** | 570 |
 | **MAS 9 OSLC Requests** | ~1,011 |
 | **MAS 9 REST Requests** | ~1,131 |
-| **Automation Scripts** | 29 (12 object, 9 field, 4 action, 3 cron, 1 integration) |
-| **Deployment Requests** | 120 (deploy + verify + update + rollback + cron setup) |
 
 ---
 
@@ -101,7 +97,7 @@ This project contains **two generations** of Postman collections:
 | Generation | Directories | Target | Modules | Notes |
 |-----------|-------------|--------|---------|-------|
 | **Original** | `postman-oslc/`, `postman-rest/` | Maximo 7.x / 8.x | 14 | Auto-generated from OAS3 specs |
-| **MAS 9** | `postman-mas9-oslc/`, `postman-mas9-rest/` | MAS 9.x | 13 + deployment | Enhanced with admin, setup, and script deployment |
+| **MAS 9** | `postman-mas9-oslc/`, `postman-mas9-rest/` | MAS 9.x | 13 | Enhanced with admin and setup |
 
 ### MAS 9 Collections
 
@@ -109,8 +105,8 @@ The MAS 9 collections include significantly more requests per module and add new
 
 | Collection | Requests | Description |
 |-----------|----------|-------------|
-| `ADMIN.json` | 38 | Script execution, CI/CD deployment lifecycle |
-| `SETUP.json` | 195 | Full administration (domains, scripts, cron, actions) |
+| `ADMIN.json` | 38 | Administration and script execution |
+| `SETUP.json` | 195 | Full administration (domains, cron, actions) |
 | `WO.json` | 165 | Work Orders with 38+ action calls |
 | `ASSET.json` | 196 | Asset management |
 | `INVENTOR.json` | 81 | Inventory management |
@@ -122,69 +118,7 @@ The MAS 9 collections include significantly more requests per module and add new
 | `CONTRACT.json` | 18 | Contracts |
 | `FINANCIAL.json` | 18 | Financial |
 | `INT.json` | 18 | Integration |
-| `autoscripts.json` | 120 | Unified deployment pipeline (REST only) |
-
----
-
-## Automation Scripts
-
-### Demo Script Library (29 Scripts)
-
-A production-grade library of Jython automation scripts organized by type:
-
-#### Object Scripts (12)
-
-| Script | Object | Event | Description |
-|--------|--------|-------|-------------|
-| `workorder.obj.save.before` | WORKORDER | Before Save | Auto-populate priority/dates for CM/EM work types |
-| `workorder.obj.statuschange.before` | WORKORDER | Before Save | 6-state transition matrix, child WO checks, labor/material validation |
-| `workorder.obj.statuschange.after` | WORKORDER | After Save | KPI calculation (response time, wrench time, schedule compliance) |
-| `asset.obj.save.before` | ASSET | Before Save | Install date validation, depreciation, parent location sync |
-| `locations.obj.init` | LOCATIONS | Initialize | Hierarchy path generation, ORGID/SITEID defaulting |
-| `pm.obj.save.before` | PM | Before Save | Frequency/job plan validation, NEXTDATE calculation |
-| `po.obj.save.before` | PO | Before Save | Total cost calculation, vendor validation |
-| `po.obj.statuschange.before` | PO | Before Save | 3-way match (PO/receipt/invoice), budget reservation |
-| `po.obj.statuschange.after` | PO | After Save | PR linkage sync, vendor performance scorecard |
-| `pr.obj.save.before` | PR | Before Save | Required date auto-set, sourcing validation |
-| `pr.obj.statuschange.before` | PR | Before Save | 4-tier approval authority engine |
-| `pr.obj.statuschange.after` | PR | After Save | Auto PO generation, budget commit/release |
-
-#### Field Validators (9)
-
-| Script | Object | Attribute | Description |
-|--------|--------|-----------|-------------|
-| `workorder.fld.status.validate` | WORKORDER | STATUS | Block COMP/CLOSE/APPR based on child WOs |
-| `workorder.fld.status.action` | WORKORDER | STATUS | Dynamic READONLY/REQUIRED on 20+ fields per status |
-| `asset.fld.serialnum.validate` | ASSET | SERIALNUM | Regex format validation, uniqueness check |
-| `locations.fld.streetaddress.validate` | LOCATIONS | STREETADDRESS | Required address for COURIER/STOREROOM types |
-| `pm.fld.frequency.validate` | PM | FREQUENCY | Range validation per FREQUNIT |
-| `po.fld.totalcost.validate` | PO | TOTALCOST | Non-negative check, vendor credit limit |
-| `po.fld.status.action` | PO | STATUS | Field group locking, budget impact preview |
-| `pr.fld.requireddate.validate` | PR | REQUIREDDATE | Past/future date limits, priority-based lead times |
-| `pr.fld.status.action` | PR | STATUS | Editability matrix, approval summary |
-
-#### Action Scripts (4)
-
-| Script | Object | Description |
-|--------|--------|-------------|
-| `workorder.action.notify` | WORKORDER | Email supervisor with WO details |
-| `workorder.action.escalation` | WORKORDER | Tiered escalation (email, priority bump, manager notify) |
-| `asset.action.downtime` | ASSET | Calculate/record downtime hours, create meter readings |
-| `pr.action.autoapprove` | PR | Auto-approve PRs under threshold with segregation of duties |
-
-#### Cron Tasks (3)
-
-| Script | Schedule | Description |
-|--------|----------|-------------|
-| `cron.wo.autoclose` | Daily | Auto-close completed WOs after configurable days |
-| `cron.pm.generate.wo` | Daily | Generate WOs from active PMs with job plan resources |
-| `cron.inv.reorder` | Daily | Check stock levels, auto-create PRs grouped by vendor |
-
-#### Integration Scripts (1)
-
-| Script | Direction | Description |
-|--------|-----------|-------------|
-| `publish.mxpo.extexit.out` | Outbound | MXPO ERP integration with field mapping and retry |
+| `autoscripts.json` | 120 | Unified script deployment pipeline (REST only) |
 
 ---
 
@@ -192,7 +126,7 @@ A production-grade library of Jython automation scripts organized by type:
 
 ### Automated Deployment with Newman
 
-The `autoscripts.json` collection provides a complete CI/CD pipeline for deploying all 29 scripts via API.
+The `autoscripts.json` collection provides a complete CI/CD pipeline for deploying automation scripts via API.
 
 #### Install Newman
 
@@ -263,7 +197,6 @@ GET    /oslc/os/{resource}/{id}     # Get by ID
 POST   /oslc/os/{resource}          # Create
 POST   /oslc/os/{resource}/{id}     # Update (x-method-override: PATCH)
 DELETE /oslc/os/{resource}/{id}     # Delete
-POST   /oslc/script/{scriptName}    # Execute automation script
 ```
 
 ### REST API (`/api/os/`)
@@ -274,7 +207,6 @@ GET    /api/os/{resource}/{id}      # Get by ID
 POST   /api/os/{resource}           # Create
 PATCH  /api/os/{resource}/{id}      # Update (native PATCH — returns 501, use OSLC method)
 DELETE /api/os/{resource}/{id}      # Delete
-POST   /api/script/{scriptName}     # Execute automation script
 ```
 
 > **Note:** Native `PATCH` returns `501 Not Implemented` on MAS 9. Use `POST` with `x-method-override: PATCH` and `patchtype: MERGE` headers instead.
@@ -355,7 +287,7 @@ maximo-interfaces/
 ├── postman-rest/                        # Original REST collections (14 modules)
 │
 ├── postman-mas9-oslc/                   # MAS 9 OSLC collections (13 modules)
-│   ├── ADMIN.json                       #   Script execution & CI/CD deployment
+│   ├── ADMIN.json                       #   Administration
 │   ├── SETUP.json                       #   Full administration (195 requests)
 │   ├── WO.json                          #   Work Orders (165 requests)
 │   └── ...                              #   10 more module files
@@ -363,14 +295,6 @@ maximo-interfaces/
 ├── postman-mas9-rest/                   # MAS 9 REST collections (13 + deployment)
 │   ├── autoscripts.json                 #   Unified deployment pipeline (120 requests)
 │   └── ...                              #   13 module files (same as OSLC)
-│
-├── autoscripts/                         # Automation scripts (git-ignored)
-│   └── demo-library/                    #   29-script demo library
-│       ├── object_scripts/              #     12 object event scripts
-│       ├── field_validators/            #     9 attribute validators
-│       ├── action_scripts/              #     4 action scripts
-│       ├── cron_tasks/                  #     3 scheduled cron scripts
-│       └── integration_scripts/         #     1 outbound integration
 │
 ├── postman-mas9-environment/            # Postman environment (git-ignored)
 └── api-discovery/                       # OAS3 specs & discovery (git-ignored)
@@ -465,12 +389,6 @@ newman run postman-mas9-rest/autoscripts.json -e your-env.json --folder "1. Depl
 ```
 </details>
 
-<details>
-<summary><strong>Why can't I set After Save (objectevent=7) via the API?</strong></summary>
-
-The `mxapiautoscript` Application Object Structure recomputes `objectevent` from boolean flags during save, overriding any explicit value. After Save requires direct SQL via a utility script. See [API Behavior Notes](#-api-behavior-notes).
-</details>
-
 ---
 
 ## Security
@@ -479,7 +397,7 @@ The `mxapiautoscript` Application Object Structure recomputes `objectevent` from
 
 - **Never commit API keys or passwords** to version control
 - All collections use `{{apikey}}` environment variable — no hardcoded credentials
-- The `.gitignore` excludes environment files, credentials, discovery artifacts, and automation scripts
+- The `.gitignore` excludes environment files, credentials, and discovery artifacts
 - OAS3 specs are git-ignored as they contain instance-specific information
 
 ### Reporting Vulnerabilities
@@ -510,8 +428,8 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 <div align="center">
 
-**[Back to Top](#ibm-maximo-7x-8x-mas-9x--api-collections--automation-scripts)**
+**[Back to Top](#ibm-maximo-7x-8x-mas-9x--api-collections)**
 
-Built for the Maximo community — API collections, automation scripts, and deployment pipelines.
+Built for the Maximo community — comprehensive API collections for IBM Maximo.
 
 </div>
