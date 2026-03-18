@@ -219,8 +219,13 @@ DELETE /api/os/{resource}/{id}      # Delete
 | `oslc.where` | `status="APPR"` | Filter records |
 | `oslc.pageSize` | `20` | Records per page |
 | `oslc.orderBy` | `+wonum` | Sort order (`+` asc, `-` desc) |
-| `lean` | `1` | Compact response (recommended) |
+| `lean` | `1` | Compact response — strips namespace prefixes (recommended) |
 | `collectioncount` | `1` | Include total record count |
+| `ignorecollectionref` | `1` | Strips `*_collectionref` URL fields from response |
+| `ignorekeyref` | `1` | Strips `href` and `localref` URL fields from response |
+| `ignorers` | `1` | Strips `_rowstamp` fields from response |
+
+> **Clean response tip:** Combine `lean=1&ignorecollectionref=1&ignorekeyref=1&ignorers=1` to get minimal JSON with only data fields — no URL noise or internal metadata. Especially useful when exporting complex nested objects (e.g., workflows via `mxapiwfprocess`).
 
 ---
 
